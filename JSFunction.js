@@ -7,5 +7,5 @@ function getHeroPage(){
 }
 
 function getTeamPage(){
-    window.open ('Tournament.php','_self',false)
+    window.open ('Team.php','_self',false)
 }
