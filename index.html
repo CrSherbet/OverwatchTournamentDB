@@ -2,13 +2,15 @@
 <html>
     <head>
         <title>Overwatch Tournament</title>
+        <link rel = "stylesheet" type = "text/css" href = "mystyle.css">
         <script type = "text/javascript" src = "JSFunction.js"></script>
     </head>
-    <body>
-        <form name="frmMain" method="post">
-            <input type="button" name="Tour" value="Tournament" Onclick="getTourPage()">
-            <input type="button" name="Hero" value="Hero" Onclick="getHeroPage()">
-            <input type="button" name="Team" value="Team" Onclick="getTeamPage()">
+    <body id="index">
+        <form name="selPart" method="post">
+            <input type="button" id="Tour" value="Tournament" Onclick="getTourPage()">
+            <input type="button" id="Team" value="Team" Onclick="getTeamPage()">
+            <input type="button" id="Hero" value="Hero" Onclick="getHeroPage()">
+            <input type="button" id="Map" value="Map" Onclick="getMapPage()">
         </form>
     </body>
 </html>

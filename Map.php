@@ -5,8 +5,8 @@
         <link rel = "stylesheet" type = "text/css" href = "mystyle.css">
         <script type = "text/javascript" src = "JSFunction.js"></script>
     </head>
-    <body id="hero">
-        <input type="button" id="hrOp" value="Option" Onclick="openHrOp()">
+    <body id="map">
+        <input type="button" id="mpOp" value="Option" Onclick="openMpOp()">
 
     </body>
 </html>
