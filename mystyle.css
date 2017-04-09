@@ -1,5 +1,6 @@
 table, th, td {
    border: 1px solid black;
+   color: white;
 }
 
 input[type=button] {
@@ -18,23 +19,14 @@ input[type=button]:hover{
     color: #111113;
 }
 
-body#index{
-	background-image: url("images/OWbg.png");
+body{
 	background-repeat: no-repeat;
 	background-size: cover;
     background-color: black;
 }
 
-body#hero{
-    background-image: url("images/Herohd.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-    background-color: black;
-}
-
-body#map{
-    background-image: url("images/Maphd.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-    background-color: black;
-}
+body#index{background-image: url("images/OWbg.png");}
+body#map{background-image: url("images/Maphd.png");}
+body#hero{background-image: url("images/Herohd.png");}
+body#tour{background-image: url("images/Maphd.png");}
+body#team{background-image: url("images/Teamhd.png");}

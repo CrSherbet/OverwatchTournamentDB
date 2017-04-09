@@ -14,3 +14,8 @@ function getMapPage(){
     window.open ('Map.php','_self',false)
 } 
 
+function backToMain(){
+    window.open ('index.html','_self',false)
+} 
+
+

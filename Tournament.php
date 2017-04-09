@@ -5,7 +5,9 @@
         <link rel = "stylesheet" type = "text/css" href = "mystyle.css">
         <script type = "text/javascript" src = "JSFunction.js"></script>
     </head>
-    <body>
+    <body id="tour">
+          <input type="button" id="back" value="back" Onclick="backToMain()">
+          <input type="button" id="tourOp" value="Option" Onclick="tourPopOp()">
         <table>
 <?php
     include 'db_connection.php';

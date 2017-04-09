@@ -6,7 +6,8 @@
         <script type = "text/javascript" src = "JSFunction.js"></script>
     </head>
     <body id="map">
-        <input type="button" id="mpOp" value="Option" Onclick="openMpOp()">
+        <input type="button" id="back" value="back" Onclick="backToMain()">
+        <input type="button" id="mapOp" value="Option" Onclick="mapPopOp()">
 
     </body>
 </html>
