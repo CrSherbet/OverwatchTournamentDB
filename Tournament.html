@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset="utf-8">
+        <title>Overwatch Tournament</title>
+        <link rel = "stylesheet" type = "text/css" href = "mystyle.css">
+        <script type = "text/javascript" src = "JSFunction.js"></script>
+    </head>
+    <body id="tour">
+          <input type="button" id="back" value="back" Onclick="backToMain()">
+          <form>
+            <h1>Map</h1>
+            Search Tournament name
+            <input type="search" name="TournamentName"><input type="submit" value="Search"> <br>
+            Tier <br>
+            <input type="checkbox" name="TierPremier"> Premier <br>
+            <input type="checkbox" name="TierMajor"> Major <br>
+            <input type="checkbox" name="TierMinor"> Minor <br>
+            Price
+            <select name="price">
+              <<option value="<50000"> <50000</option>
+              <<option value="50k~100k">50,000~100,000</option>
+              <<option value="100k~150K">100,000~150,000</option>
+              <<option value="150k~200K">150,000~200,000</option>
+              <<option value="200k~250K">200,000~250,000</option>
+              <<option value="250k~300K">250,000~300,000</option>
+              <<option value=">300K">>300,000</option>
+            </select>
+              <input type="submit" value="Search">
+          </form>
+          <!-- <script>
+          var slider = document.getElementById('test5');
+  noUiSlider.create(slider, {
+   start: [20, 80],
+   connect: true,
+   step: 1,
+   range: {
+     'min': 0,
+     'max': 100
+   },
+   format: wNumb({
+     decimals: 0
+   })
+  });
+  </script> -->
+
+<!-- <?php
+    include 'db_connection.php';
+    $conn = OpenCon();
+    $sql = "SELECT * FROM n";
+    $result = $conn->query($sql);
+
+
+    if ($result->num_rows > 0) {
+     // output data of each row
+     /* in n table
+     A      B
+     5      fff
+     121    HI */
+
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>". $row["A"]. "</td>";
+        echo "<td>" . $row["B"]. "</td>";
+        echo "</tr>";
+    }
+    } else {
+        echo "0 results";
+    }
+
+    CloseCon($conn);
+?> -->
+
+    </body>
+</html>

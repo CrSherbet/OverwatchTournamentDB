@@ -3,11 +3,17 @@ table, th, td {
    color: white;
 }
 
+h1{
+  color: white;
+}
+form{
+  color: white;
+}
 input[type=button] {
     padding: 13px 30px;
     text-align: center;
     font-size: 16px;
-    -webkit-transition-duration: 0.4s; 
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     background-color: #111113;
     color: white;
@@ -15,7 +21,7 @@ input[type=button] {
 }
 
 input[type=button]:hover{
-    background-color: white; 
+    background-color: white;
     color: #111113;
 }
 
