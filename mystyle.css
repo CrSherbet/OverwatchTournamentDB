@@ -28,11 +28,11 @@ input[type=button]:hover{
 body{
 	background-repeat: no-repeat;
 	background-size: cover;
-    background-color: black;
+  background-color: black;
 }
 
 body#index{background-image: url("images/OWbg.png");}
 body#map{background-image: url("images/Maphd.png");}
 body#hero{background-image: url("images/Herohd.png");}
-body#tour{background-image: url("images/Maphd.png");}
+body#tour{background-image: url("images/Tourhd.png");}
 body#team{background-image: url("images/Teamhd.png");}
