@@ -1,23 +1,23 @@
 <!doctype html>
 <html>
-    <head>
-      <meta charset="utf-8">
-        <title>Overwatch Tournament</title>
-        <link rel = "stylesheet" type = "text/css" href = "mystyle.css">
-        <script type = "text/javascript" src = "JSFunction.js"></script>
-    </head>
-    <body id="tour">
-          <input type="button" id="back" value="back" Onclick="backToMain()">
-          <form>
-            <h1>Tournament</h1>
-            Search Tournament name
-            <input type="search" name="TournamentName"><input type="submit" value="Search"> <br>
-            Tier <br>
-            <input type="checkbox" name="TierPremier"> Premier <br>
-            <input type="checkbox" name="TierMajor"> Major <br>
-            <input type="checkbox" name="TierMinor"> Minor <br>
-            Price
-            <select name="price">
+
+<head>
+    <meta charset="utf-8">
+    <title>Overwatch Tournament</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script type="text/javascript" src="JSFunction.js"></script>
+</head>
+
+<body id="tour">
+    <input type="button" id="back" value="back" Onclick="backToMain()">
+    <form>
+        <h1>Tournament</h1> Search Tournament name
+        <input type="search" name="TournamentName" placeholder="Tournament name"><input type="submit" value="Search"> <br> Tier <br>
+        <input type="checkbox" name="TierPremier"> Premier <br>
+        <input type="checkbox" name="TierMajor"> Major <br>
+        <input type="checkbox" name="TierMinor"> Minor <br> Price
+        <select name="price">
+          <<<option value="PriceAll">All</option>
               <<option value="<50000"> <50000</option>
               <<option value="50k~100k">50,000~100,000</option>
               <<option value="100k~150K">100,000~150,000</option>
@@ -26,9 +26,9 @@
               <<option value="250k~300K">250,000~300,000</option>
               <<option value=">300K">>300,000</option>
             </select>
-              <input type="submit" value="Search">
-          </form>
-          <!-- <script>
+        <input type="submit" value="Search">
+    </form>
+    <!-- <script>
           var slider = document.getElementById('test5');
   noUiSlider.create(slider, {
    start: [20, 80],
@@ -44,7 +44,7 @@
   });
   </script> -->
 
-<!-- <?php
+    <!-- <?php
     include 'db_connection.php';
     $conn = OpenCon();
     $sql = "SELECT * FROM n";
@@ -71,5 +71,6 @@
     CloseCon($conn);
 ?> -->
 
-    </body>
+</body>
+
 </html>
