@@ -10,24 +10,26 @@
     <body id="tour">
           <form>
             <h1>Tournament</h1>
-            Search Tournament name
+            Search Tournament Name
             <input type="search" id="tourNameText">
-            <button id="tourName" value="Search" Onclick="searchTourName()"> Submit </button> 
+            <button id="tourName" value="Search" Onclick="searchTourName()"> Search </button> 
             <br> Tier <br>
-            <input type="checkbox" id="tierPremier" Onclick="searchPremier()"> Premier <br>
-            <input type="checkbox" id="tierMajor" Onclick="searchMajor()"> Major <br>
-            <input type="checkbox" id="tierMinor" Onclick"searchMinor()"> Minor <br>
+            <input type="checkbox" id="tierPremier"> Premier <br>
+            <input type="checkbox" id="tierMajor"> Major <br>
+            <input type="checkbox" id="tierMinor"> Minor <br>
             Price
             <select id="price">
-              <option value="<50000"> <50000</option>
-              <option value="50k~100k">50,000~100,000</option>
-              <option value="100k~150K">100,000~150,000</option>
-              <option value="150k~200K">150,000~200,000</option>
-              <option value="200k~250K">200,000~250,000</option>
-              <option value="250k~300K">250,000~300,000</option>
-              <option value=">300K">>300,000</option>
+              <option value="-1">ALL</option>
+              <option value="0">50000</option>
+              <option value="50000">50,000~100,000</option>
+              <option value="100000">100,000~150,000</option>
+              <option value="150000">150,000~200,000</option>
+              <option value="200000">200,000~250,000</option>
+              <option value="250000">250,000~300,000</option>
+              <option value="300000">>300,000</option>
             </select>
-              <input type="submit" value="Search">
+              <button id="opSearch" value="Search" Onclick="searchOpTour()"> Submit </button> 
           </form>
+          
       </body>
 </html>

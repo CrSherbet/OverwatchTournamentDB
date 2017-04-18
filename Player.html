@@ -1,17 +1,32 @@
 <!doctype html>
 <html>
+
     <head>
         <title>Overwatch Tournament</title>
         <link rel="stylesheet" type="text/css" href="mystyle.css">
         <script type="text/javascript" src="JSFunction.js"></script>
     </head>
-    <body id="team">
+
+    <body id="hero">
         <input type="button" id="back" value="back" Onclick="backToMain()">
         <form>
-            <h1>Team</h1>
-            Search Team name
-            <input type="search" id="teamNameText">
-            <button id="teamName" value="Search" onclick="">Submit</button><br>
+            <h1>Player</h1>
+            Search Player name
+            <input type="search" id="playerNameText">
+            <button id="btn-playerName" value="Search" Onclick="">
+                Submit
+            </button><br>
+            Main Role
+            <br>
+            <input type="checkbox" id="roleDPS" Onclick="">
+            DPS
+            <br>
+            <input type="checkbox" id="roleTank" Onclick="">
+            Tank
+            <br>
+            <input type="checkbox" id="roleSupport" Onclick"">
+            Support
+            <br>
             Coutry<br>
             <input type="checkbox" id="country-bra">Brazil
             <input type="checkbox" id="country-chin">China
@@ -23,4 +38,5 @@
             <input type="checkbox" id="country-usa">USA
         </form>
     </body>
+
 </html>
