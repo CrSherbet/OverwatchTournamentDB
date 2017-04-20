@@ -29,6 +29,10 @@ input[type=button]:hover {
   color: #111113;
 }
 
+div {
+  color: white;
+}
+
 body {
   background-repeat: no-repeat;
   background-size: cover;

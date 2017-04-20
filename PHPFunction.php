@@ -10,40 +10,34 @@
     if($key == "searchTourName"){
         searchTourName($_POST['name']);
     } else if($key == "searchOpTour"){
-        searchOpTour($_POST['tireState'],$_POST['price']);
+        searchOpTour($_POST['tierState'],$_POST['price']);
     } else if($key == "getCountryList"){
         getCountryList($_POST['name']);
     }
 
-    function getSomeList($nameOfList){
-        $conn = $GLOBALS['conn'];
-        $sql = "SELECT * FROM $nameOfList";
-        $result = $conn->query($sql);
-        $res = array();
-        if ($result!=null)
-            for ($res = array (); $row = $result->fetch_assoc(); $res[] = $row);
-        echo json_encode($res);
-    }
-
     function searchTourName($name) {
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT TourName, Price, Tier FROM tournament WHERE tournament.TourName like '%$name%'";
+        $sql = "SELECT TourName,Price,Tier FROM tournament ";
         $result = $conn->query($sql);
+       
         if ($result!=null){
-            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>"
-            while($row = $result->fetch_assoc()){
-                echo "<tr>";
-                echo "<td>". $row["Tourname"]. "</td>";
-                echo "<td>" . $row["Price"]. "</td>";
-                echo "<td>" . $row["Tier"]. "</td>";
-                echo "</tr>";
-            }
-        } else echo "  No Information!!!  ";
+            echo "<tr>  <th>Tournament Name</th> <th>Price</th> <th>Tier</th> </tr>";
+           while($row = $result->fetch_assoc()){
+               echo "<tr>";
+               echo "<td>". $row['TourName']."</td>";
+               echo "<td>". $row['Price']."</td>";
+               echo "<td>". $row['Tier']."</td>";
+               echo "</tr>";
+           }
+        }
+        echo "<br>";
     }  
 
     function searchOpTour($tierState, $price) {
         $conn = $GLOBALS['conn'];
         $haveCon = $GLOBALS['haveCon'];
+        $haveCon = true;
+
         if($tierState == 1)
             $sql = "SELECT * FROM tournament WHERE tournament.Tier = 'Premier'";
         else if($tierState == 2)
@@ -76,7 +70,7 @@
         }
         $result = $conn->query($sql);
         if ($result!=null){
-            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>"
+            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>";
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>". $row["Tourname"]. "</td>";
