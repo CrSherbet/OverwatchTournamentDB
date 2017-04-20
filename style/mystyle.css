@@ -41,12 +41,12 @@ body {
 
 body#index {
   background-image: url("../images/OWbg.png");
-  max-height: 100%;
+  background-size: cover;
 }
 
 body#map {
   background-image: url("../images/Maphd.png");
-  max-height: 100%;
+  background-size: cover;
 }
 
 body#hero {
@@ -56,7 +56,8 @@ body#hero {
 
 body#tour {
   background-image: url("../images/Tourhd.png");
-  max-height: 100%;
+  background-size: cover;
+  min-height: 100%;
 }
 
 body#team {
