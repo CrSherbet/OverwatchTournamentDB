@@ -28,9 +28,7 @@ input[type=button]:hover{
 div{
   color: white;
 }
-select {
-  color: black;
-}
+
 body{
 	background-repeat: no-repeat;
 	background-size: cover;

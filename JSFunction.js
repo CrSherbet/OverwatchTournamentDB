@@ -37,7 +37,6 @@ function searchOpTour(){
     }
     sendRequest(values);
     tierState = 0;
-
 }
 
 function searchTourName(){
@@ -49,9 +48,9 @@ function searchTourName(){
     sendRequest(values);
 }
 
-function sendRequest(values){
+function tourSendRequest(values){
     var result = $.ajax({
-        url: "PHPFunction.php",
+        url: "TourPHPFn.php",
         type: "post",
         data: values,
         success: function(data,status,xhr){

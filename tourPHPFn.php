@@ -70,7 +70,7 @@
         }
         $result = $conn->query($sql);
         if ($result!=null){
-            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>";
+            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>"
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>". $row["Tourname"]. "</td>";
