@@ -7,8 +7,6 @@
     <title>Overwatch Tournament</title>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <script type="text/javascript" src="JSFunction.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -48,11 +46,24 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
 </head>
 
-<body id="index">
-
+<body id="team">
+    <form>
+        <h1>Team</h1>
+        Search Team name
+        <input type="search" id="teamNameText">
+        <button id="teamName" value="Search" onclick="">Submit</button><br> Coutry
+        <br>
+        <input type="checkbox" id="country-bra">Brazil
+        <input type="checkbox" id="country-chin">China
+        <input type="checkbox" id="country-fin">Finland
+        <input type="checkbox" id="country-fra">FRA
+        <input type="checkbox" id="country-kor">Korea
+        <input type="checkbox" id="country-nld">Netherlands
+        <input type="checkbox" id="country-swe">Sweden
+        <input type="checkbox" id="country-usa">USA
+    </form>
 </body>
 
 </html>
