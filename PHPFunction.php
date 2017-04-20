@@ -1,7 +1,7 @@
 <?php
     include 'db_connection.php';
     $conn = OpenCon();
-
+    $haveCon = true;
     if (!isset($_POST['key'])) {
         die("Does not have key");
     }
@@ -27,19 +27,26 @@
 
     function searchTourName($name) {
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT * FROM tournament WHERE tournament.TourName like '%$name%'";
+        $sql = "SELECT TourName, Price, Tier FROM tournament WHERE tournament.TourName like '%$name%'";
         $result = $conn->query($sql);
-        $res = array();
-        if ($result!=null)
-            for ($res = array (); $row = $result->fetch_assoc(); $res[] = $row);
-        echo json_encode($res);
+        if ($result!=null){
+            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>"
+            while($row = $result->fetch_assoc()){
+                echo "<tr>";
+                echo "<td>". $row["Tourname"]. "</td>";
+                echo "<td>" . $row["Price"]. "</td>";
+                echo "<td>" . $row["Tier"]. "</td>";
+                echo "</tr>";
+            }
+        } else echo "  No Information!!!  ";
     }  
 
     function searchOpTour($tierState, $price) {
         $conn = $GLOBALS['conn'];
+        $haveCon = $GLOBALS['haveCon'];
         if($tierState == 1)
             $sql = "SELECT * FROM tournament WHERE tournament.Tier = 'Premier'";
-       /else if($tierState == 2)
+        else if($tierState == 2)
             $sql = "SELECT * FROM tournament WHERE tournament.Tier = 'Major'";
         else if($tierState == 3)
             $sql = "SELECT * FROM tournament WHERE tournament.Tier = 'Premier' OR tournament.Tier = 'Major'";
@@ -49,25 +56,35 @@
             $sql = "SELECT * FROM tournament WHERE tournament.Tier = 'Premier' OR tournament.Tier = 'Minor'";
         else if($tierState == 6)
             $sql = "SELECT * FROM tournament WHERE tournament.Tier = 'Major' OR tournament.Tier = 'Minor'";
-        else 
+        else {
             $sql = "SELECT * FROM tournament";
+            $haveCon = false;
+        }
 
-      /*  if($price == 0)
-            $sql .= "AND tournament.Price <= 50000 ";
+        if($price != -1){   
+            $deltaPrice = $price - 50000;
 
-
-
-        0">50000</option>
-              <option value="50000">50,000~100,000</option>
-              <option value="100000">100,000~150,000</option>
-              <option value="150000">150,000~200,000</option>
-              <option value="200000">200,000~250,000</option>
-              <option value="250000">250,000~300,000</option>
-              <option value="300000">>300,000</option>*/
+            if($haveCon) 
+                $sql .= " AND ";
+            else 
+                $sql .= " WHERE ";
+            
+            if($price == -2) 
+                $sql .= " tournament.Price > ".$price;
+            else
+                $sql .= " (tournament.Price <= ".$price." AND tournament > ".$deltaPrice." )";
+        }
         $result = $conn->query($sql);
-        if ($result!=null)
-            for ($res = array (); $row = $result->fetch_assoc(); $res[] = $row);
-        echo json_encode($res);
+        if ($result!=null){
+            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>"
+            while($row = $result->fetch_assoc()){
+                echo "<tr>";
+                echo "<td>". $row["Tourname"]. "</td>";
+                echo "<td>" . $row["Price"]. "</td>";
+                echo "<td>" . $row["Tier"]. "</td>";
+                echo "</tr>";
+            }
+        } else echo "  No Information!!!  ";
     }
     CloseCon($conn);
 ?>
