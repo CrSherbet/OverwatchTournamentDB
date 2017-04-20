@@ -1,38 +1,61 @@
-table, th, td {
-   border: 1px solid black;
-   color: white;
+table,
+th,
+td {
+  border: 1px solid black;
+  color: white;
 }
 
-h1{
+h1 {
   color: white;
 }
-form{
+
+form {
   color: white;
 }
+
 input[type=button] {
-    padding: 13px 30px;
-    text-align: center;
-    font-size: 16px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    background-color: #111113;
-    color: white;
-    border: 2px solid #cccccf;
+  padding: 13px 30px;
+  text-align: center;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  background-color: #111113;
+  color: white;
+  border: 2px solid #cccccf;
 }
 
-input[type=button]:hover{
-    background-color: white;
-    color: #111113;
+input[type=button]:hover {
+  background-color: white;
+  color: #111113;
 }
 
-body{
-	background-repeat: no-repeat;
-	background-size: cover;
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: black;
 }
 
-body#index{background-image: url("images/OWbg.png");}
-body#map{background-image: url("images/Maphd.png");}
-body#hero{background-image: url("images/Herohd.png");}
-body#tour{background-image: url("images/Tourhd.png");}
-body#team{background-image: url("images/Teamhd.png");}
+body#index {
+  background-image: url("../images/OWbg.png");
+  max-height: 100%;
+}
+
+body#map {
+  background-image: url("../images/Maphd.png");
+  max-height: 100%;
+}
+
+body#hero {
+  background-image: url("../images/Herohd.png");
+  max-height: 100%;
+}
+
+body#tour {
+  background-image: url("../images/Tourhd.png");
+  max-height: 100%;
+}
+
+body#team {
+  background-image: url("../images/Teamhd.png");
+  max-height: 100%;
+}
