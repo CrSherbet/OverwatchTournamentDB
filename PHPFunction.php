@@ -15,7 +15,6 @@
         getCountryList($_POST['name']);
     }
 
-    
     function searchTourName($name) {
         $conn = $GLOBALS['conn'];
         $sql = "SELECT TourName,Price,Tier FROM tournament ";
@@ -38,6 +37,7 @@
         $conn = $GLOBALS['conn'];
         $haveCon = $GLOBALS['haveCon'];
         $haveCon = true;
+
         if($tierState == 1)
             $sql = "SELECT * FROM tournament WHERE tournament.Tier = 'Premier'";
         else if($tierState == 2)
@@ -55,33 +55,30 @@
             $haveCon = false;
         }
 
-        $deltaPrice = $price - 50000;
-        
-        if($price != -1){
-            if($haveCon)
+        if($price != -1){   
+            $deltaPrice = $price - 50000;
+
+            if($haveCon) 
                 $sql .= " AND ";
-            else
+            else 
                 $sql .= " WHERE ";
-            if($price == -2 )
-                $sql .= " tournament.Price > 300000";
+            
+            if($price == -2) 
+                $sql .= " tournament.Price > ".$price;
             else
-                $sql .= " (tournament.Price <= " .$price. " AND tournament.Price > " .$deltaPrice.")" ;
+                $sql .= " (tournament.Price <= ".$price." AND tournament > ".$deltaPrice." )";
         }
-        echo $sql;
-        
         $result = $conn->query($sql);
         if ($result!=null){
-            echo "<tr>  <th>Tournament Name</th> <th>Price</th> <th>Tier</th> </tr>";
-           while($row = $result->fetch_assoc()){
-               echo "<tr>";
-               echo "<td>". $row['TourName']."</td>";
-               echo "<td>". $row['Price']."</td>";
-               echo "<td>". $row['Tier']."</td>";
-               echo "</tr>";
-           }
-        }
-        else echo "   No Information!!!   ";
-        
+            echo "<tr><th>Tournament Name</th><th>Price</th><th>Tier</th></tr>"
+            while($row = $result->fetch_assoc()){
+                echo "<tr>";
+                echo "<td>". $row["Tourname"]. "</td>";
+                echo "<td>" . $row["Price"]. "</td>";
+                echo "<td>" . $row["Tier"]. "</td>";
+                echo "</tr>";
+            }
+        } else echo "  No Information!!!  ";
     }
     CloseCon($conn);
 ?>
