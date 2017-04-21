@@ -1,5 +1,6 @@
 var tierState = 0;
 var price = 0;
+var phpURL;
 var TIER = {
     PREMIER: 1,
     MAJOR: 2,
@@ -44,15 +45,22 @@ function setPrice() {
     price = priceItem.options[priceItem.selectedIndex].value;
 }
 
+function resetTourForm(){
+    document.getElementById("tierPremier").checked = false;
+    document.getElementById("tierMajor").checked = false;
+    document.getElementById("tierMinor").checked = false;
+    document.getElementById("price").selectedIndex = 0;
+}
+
 function searchOpTour() {
     setStateOfTier();
     setPrice();
-    alert(tierState + " " + price);
     var values = {
         'key': "searchOpTour",
         'tierState': tierState,
         'price': price
     }
+    phpURL = "tourPHPFn.php";
     sendRequest(values);
     tierState = 0;
 }
@@ -63,12 +71,52 @@ function searchTourName() {
         'key': "searchTourName",
         'name': val
     }
+    phpURL = "tourPHPFn.php";
+    sendRequest(values);
+    resetTourForm();
+}
+
+function showMap(type){
+    var values = {
+        'key': type
+    }
+    phpURL = "mapPHPFn.php";
     sendRequest(values);
 }
 
-function tourSendRequest(values) {
+function showHero(role){
+    var values = {
+        'key': role
+    }
+    phpURL = "heroPHPFn.php";
+    sendRequest(values);
+}
+
+function searchTeamName(){
+    var val = document.getElementById("teamNameText").value;
+    var values = {
+        'key': "searchTeamName",
+        'name': val
+    }
+    phpURL = "teamPHPFn.php";
+    sendRequest(values);
+    resetForm();
+}
+
+function searchPlayerName(){
+    var val = document.getElementById("playerNameText").value;
+    var values = {
+        'key': "searchPlayerName",
+        'name': val
+    }
+    phpURL = "playerPHPFn.php";
+    sendRequest(values);
+}
+
+
+function sendRequest(values) {
     var result = $.ajax({
-        url: "tourPHPFn.php",
+        url: phpURL,
         type: "post",
         data: values,
         success: function (data, status, xhr) {

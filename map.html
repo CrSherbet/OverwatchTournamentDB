@@ -48,10 +48,12 @@
 <body id="map">
     <input type="button" id="back" value="back" Onclick="backToMain()">
     <h1>Map</h1>
-    <button id="btn-map-assault" onclick="">ASSAULT</button>
-    <button id="btn-map-escort" onclick="">ESCORT</button>
-    <button id="btn-map-control" onclick="">CONTROL</button>
-
+     <button id="btn-map-all" Onclick="showMap('All')">ALL</button>
+    <button id="btn-map-assault" Onclick="showMap('Assault')">ASSAULT</button>
+    <button id="btn-map-escort" Onclick="showMap('Escort')">ESCORT</button>
+    <button id="btn-map-control" Onclick="showMap('Control')">CONTROL</button>
+    <div id="content"> Hi</div>
+    <script>showMap('All')</script>
 
 </body>
 

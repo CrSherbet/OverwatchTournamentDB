@@ -43,15 +43,13 @@
     </nav>
 </head>
 
-<body id="hero">
+<body id="player">
     <input type="button" id="back" value="back" Onclick="backToMain()">
-    <form>
+    
         <h1>Player</h1>
         Search Player name
         <input type="search" id="playerNameText">
-        <button id="btn-playerName" value="Search" Onclick="">
-                Submit
-            </button><br> Main Role
+        <button id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br> Main Role
         <br>
         <input type="checkbox" id="roleDPS" Onclick=""> DPS
         <br>
@@ -68,7 +66,8 @@
         <input type="checkbox" id="country-nld">Netherlands
         <input type="checkbox" id="country-swe">Sweden
         <input type="checkbox" id="country-usa">USA
-    </form>
+        <div id="content"> Hi</div>
+        
 </body>
 
 </html>
