@@ -44,12 +44,16 @@
 </head>
 
 <body id="player">
-    <input type="button" id="back" value="back" Onclick="backToMain()">
-    
+    <div class="container">
         <h1>Player</h1>
-        Search Player name
-        <input type="search" id="playerNameText">
-        <button id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br> Main Role
+        <form class="form-inline">
+            <div class="form-group">
+                <input class="form-control" type="search" id="playerNameText" placeholder="Name">
+            </div>
+            <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
+        </form>
+
+        Main Role
         <br>
         <input type="checkbox" id="roleDPS" Onclick=""> DPS
         <br>
@@ -67,7 +71,7 @@
         <input type="checkbox" id="country-swe">Sweden
         <input type="checkbox" id="country-usa">USA
         <div id="content"> Hi</div>
-        
+    </div>
 </body>
 
 </html>

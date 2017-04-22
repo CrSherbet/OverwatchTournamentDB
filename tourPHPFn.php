@@ -70,7 +70,8 @@
          
         $result = $conn->query($sql);
         if ($result!=null){
-            echo "<tr>  <th>Tournament Name</th> <th>Price</th> <th>Tier</th> </tr>";
+            echo "<thead><tr>  <th>Tournament Name</th> <th>Price</th> <th>Tier</th> </tr></thead>";
+            echo "<tbody>";
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>". $row['TourName']."</td>";
@@ -78,6 +79,7 @@
                 echo "<td>". $row['Tier']."</td>";
                 echo "</tr>";
            }
+           echo "</tbody>";
         }
         else echo "   No Information!!!   ";
     }

@@ -15,34 +15,34 @@
   <!-- Latest compiled and minified JavaScript -->
   <script type="text/javascript" src="javascript/bootstrap.js"></script>
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-          <a class="navbar-brand" href="index.html">Brand</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active" onclick="getTourPage()"><a href="tournament.html">Tournament <span class="sr-only">(current)</span></a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="hero.html">Hero</a></li>
-            <li><a href="map.html">Map</a></li>
-            <li><a href="player.html">Player</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+        <a class="navbar-brand" href="index.html">Brand</a>
       </div>
-      <!-- /.container-fluid -->
-    </nav>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active" onclick="getTourPage()"><a href="tournament.html">Tournament <span class="sr-only">(current)</span></a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="hero.html">Hero</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="player.html">Player</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
 </head>
 
 <!--HTML TOURNAMENT PAGE -->
@@ -52,7 +52,7 @@
     <h1>Tournament</h1>
     Search Tournament Name
     <input type="search" id="tourNameText">
-    <button id="tourName" value="Search" Onclick="searchTourName()"> Search </button>
+    <button class="btn btn-default" id="tourName" value="Search" Onclick="searchTourName()"> Search </button>
     <br> Tier <br>
     <input type="checkbox" id="tierPremier"> Premier <br>
     <input type="checkbox" id="tierMajor"> Major <br>
@@ -67,10 +67,16 @@
               <option value="300000">250,001~300,000</option>
               <option value="-2">More than 300,000</option>
             </select>
-    <button id="opSearch" value="Search" Onclick="searchOpTour()"> Submit </button>
+    <button class="btn btn-default" id="opSearch" value="Search" Onclick="searchOpTour()"> Submit </button>
+   
+    <div class="jumbotron" id="table-tournament">
+      <table class="table table-bordered" id="content">
+        <script>
+          searchOpTour()
+        </script>
+      </table>
+    </div>
   </div>
-  <div id="content"> Hi</div>
-  <script>searchOpTour()</script>
 
 </body>
 

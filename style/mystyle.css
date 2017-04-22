@@ -1,8 +1,15 @@
+import bootstrap.css
+
 table,
 th,
 td {
   border: 1px solid black;
   color: white;
+}
+
+
+div#table-tournament {
+  background-color: #696969;
 }
 
 h1 {
@@ -63,4 +70,8 @@ body#tour {
 body#team {
   background-image: url("../images/Teamhd.png");
   max-height: 100%;
+}
+
+body#player {
+  background-color: #212F3D
 }
