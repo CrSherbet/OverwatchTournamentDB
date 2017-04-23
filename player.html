@@ -43,7 +43,9 @@
     </nav>
 </head>
 
+
 <body id="player">
+
     <div class="container">
         <h1>Player</h1>
         <form class="form-inline">
@@ -51,7 +53,21 @@
                 <input class="form-control" type="search" id="playerNameText" placeholder="Name">
             </div>
             <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
+
         </form>
+        <div class="row">
+            <div class="col-md-4 col-xs-6">
+                <label>Role</label>
+                <div class="btn-group bootsrape-select">
+                    <button type="button" class="btn dropdown-toggle btn-default">
+                            <span class="filter-option pull-left">DPS</span>
+                            <span class="bs-caret">
+                                <span clss="caret"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         Main Role
         <br>
@@ -71,6 +87,9 @@
         <input type="checkbox" id="country-swe">Sweden
         <input type="checkbox" id="country-usa">USA
         <div id="content"> Hi</div>
+        <script>
+            searchPlayerName()
+        </script>
     </div>
 </body>
 
