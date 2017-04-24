@@ -48,33 +48,44 @@
 
     <div class="container">
         <h1>Player</h1>
-        <div class="form-group">
-            <input class="form-control" type="search" id="playerNameText" placeholder="Name">
-        </div>
-        <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
-
         <div class="row">
             <div class="col-md-4 col-xs-6">
-                <label>Role</label>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Role <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li onclick="dropdown(this.innerHTML)"><a href="#">All</a></li>
-                        <li Onclick="dropdown(this.innerHTML)"><a href="#">DPS</a></li>
-                        <li Onclick="dropdown(this.innerHTML)"><a href="#">Tank</a></li>
-                        <li Onclick="dropdown(this.innerHTML)"><a href="#">Support</a></li>
-                    </ul>
+                <div class="form-group">
+                    <label for="sel1">Name</label>
+                    <form class="form-inline">
+                        <input class="form-control" type="text" id="playerNameText" placeholder="Name" />
+                        <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-6">
+                <div class="form-group">
+                    <label for="sel1">Role</label>
+                    <select class="form-control" id="sel1">
+                        <option>All</option>
+                        <option>DPS</option>
+                        <option>Tank</option>
+                        <option>Support</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-6">
+                <div class="form-group">
+                    <label for="sel1">Country</label>
+                    <select class="form-control" id="sel1">
+                        <option>All</option>
+                        <option>Brazil</option>
+                        <option>China</option>
+                        <option>Finland</option>
+                        <option>FRA</option>
+                        <option>Korea</option>
+                        <option>Netherlands</option>
+                        <option>Sweden</option>
+                        <option>USA</option>
+                    </select>
                 </div>
             </div>
         </div>
-        <input type="checkbox" id="country-bra">Brazil
-        <input type="checkbox" id="country-chin">China
-        <input type="checkbox" id="country-fin">Finland
-        <input type="checkbox" id="country-fra">FRA
-        <input type="checkbox" id="country-kor">Korea
-        <input type="checkbox" id="country-nld">Netherlands
-        <input type="checkbox" id="country-swe">Sweden
-        <input type="checkbox" id="country-usa">USA
         <div id="content"> Hi</div>
         <script>
             searchPlayerName()
