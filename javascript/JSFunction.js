@@ -117,18 +117,3 @@ function dropdown(val) {
     var y = document.getElementsByClassName('btn btn-default dropdown-toggle');
     var aNode = y[0].innerHTML = val +' <span class="caret"></span>';
 }
-
-function sendRequest(values) {
-    var result = $.ajax({
-        url: phpURL,
-        type: "post",
-        data: values,
-        success: function (data, status, xhr) {
-            $("#content").html(JSON.stringify(data));
-            console.log(JSON.stringify(data));
-        },
-        error: function (request, status, error) {
-            console.log(error);
-        }
-    });
-}
