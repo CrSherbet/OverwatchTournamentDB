@@ -7,25 +7,8 @@ var TIER = {
     MINOR: 4
 }
 
-function getTourPage() {
-    window.open('tournament.html', '_self', false)
-}
 
-function getTeamPage() {
-    window.open('team.html', '_self', false)
-}
 
-function getHeroPage() {
-    window.open('hero.html', '_self', false)
-}
-
-function getMapPage() {
-    window.open('map.html', '_self', false)
-}
-
-function getPlayerPage() {
-    window.open('player.html', '_self', false)
-}
 
 function backToMain() {
     window.open('index.html', '_self', false)
