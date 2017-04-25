@@ -6,7 +6,6 @@ var TIER = {
     MAJOR: 2,
     MINOR: 4
 }
-
 function setStateOfTier() {
     if (document.getElementById("tierPremier").checked)
         tierState += TIER.PREMIER;
