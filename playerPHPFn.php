@@ -47,7 +47,8 @@
 
      
     function returnTable($result){
-        echo "<tr> <th>BattleTag</th> <th>Firstname</th>  <th>Lastname</th> <th>Team</th> <th>Position</th> <th>Main Character</th> <th>Country</th></tr>";
+        echo "<thead> <tr> <th>BattleTag</th> <th>Firstname</th>  <th>Lastname</th> <th>Team</th> <th>Position</th> <th>Main Character</th> <th>Country</th></tr> </thead>";
+        echo "<tbody>";
         while($row = $result->fetch_assoc()){
             echo "<tr>";
             echo "<td>". $row['BattleTag']."</td>";
@@ -59,6 +60,7 @@
             echo "<td>". $row['CFullName']."</td>";
             echo "</tr>";
         }
+        echo "</tbody>";
     }
     
     CloseCon($conn);

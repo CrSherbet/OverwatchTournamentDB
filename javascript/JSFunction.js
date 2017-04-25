@@ -55,6 +55,7 @@ function searchOpPlayer(){
     }
     phpURL = "playerPHPFn.php";
     sendRequest(values);
+    document.getElementById("playerNameText").value = "";
 }
 
 

@@ -7,6 +7,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="style/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="javascript/semantic.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="style/bootstrap.css">
 
@@ -45,53 +50,56 @@
 
 
 <body id="player">
-
     <div class="container">
         <h1>Player</h1>
-        <div class="row">
-            <div class="col-md-4 col-xs-6">
-                <label for="sel1">Name</label>
-                <form class="form-inline" onsubmit="return false">
+        <div class="bd-exmaple">
+            <div class="row">
+                <div class="col-md-4 col-xs-6">
+                    <label for="sel1">Search</label>
+                    <form class="form-inline" onsubmit="return false">
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="playerNameText" placeholder="Name" />
+                            <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-xs-6">
                     <div class="form-group">
-                        <input class="form-control" type="text" id="playerNameText" placeholder="Name" />
-                        <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4 col-xs-6">
-                <div class="form-group">
-                    <label for="sel1">Role</label>
-                    <select class="form-control" id="posSelected" onchange="searchOpPlayer()">
+                        <label for="sel1">Role</label>
+                        <select class="form-control" id="posSelected" onchange="searchOpPlayer()">
                         <option>All</option>
                         <option>DPS</option>
                         <option>Tank</option>
                         <option>Support</option>
                     </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-xs-6">
-                <div class="form-group">
-                    <label for="sel1">Country</label>
-                    <select class="form-control" id="countrySelected" onchange="searchOpPlayer()">
+                <div class="col-md-4 col-xs-6">
+                    <div class="form-group">
+                        <label for="sel1">Country</label>
+                        <select class="form-control" id="countrySelected" onchange="searchOpPlayer()">
                         <option>All</option>
                         <option>Brazil</option>
                         <option>China</option>
                         <option>Finland</option>
                         <option>France</option>
-                        <option>Korea</option>
+                        <option>South Korea</option>
                         <option>Netherlands</option>
                         <option>Sweden</option>
                         <option>United States</option>
                     </select>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container-fluid" id="content"> Hi
-        <script>
-            searchPlayerName()
-        </script>
-        </div>
+    <div class="container">
+        <table class="ui inverted table" id="content">
+            <script>
+                searchPlayerName()
+            </script>
+        </table>
     </div>
 </body>
 
