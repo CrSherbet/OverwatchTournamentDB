@@ -1,5 +1,7 @@
 var tierState = 0;
 var price = 0;
+var role;
+var position;
 var phpURL;
 var TIER = {
     PREMIER: 1,
@@ -15,10 +17,21 @@ function setStateOfTier() {
         tierState += TIER.MINOR;
 }
 
+function setPosition() {
+    var posItem = document.getElementById("posSelected");
+    position = posItem.options[posItem.selectedIndex].value;
+}
+
+function setCountry() {
+    var countryItem = document.getElementById("countrySelected");
+    country = countryItem.options[countryItem.selectedIndex].value;
+}
+
 function setPrice() {
     var priceItem = document.getElementById("price");
     price = priceItem.options[priceItem.selectedIndex].value;
 }
+
 
 function resetTourForm(){
     document.getElementById("tierPremier").checked = false;
@@ -26,6 +39,24 @@ function resetTourForm(){
     document.getElementById("tierMinor").checked = false;
     document.getElementById("price").selectedIndex = 0;
 }
+
+function resetPlayerForm(){
+    document.getElementById("posSelected").selectedIndex = 0;
+    document.getElementById("countrySelected").selectedIndex = 0;
+}
+
+function searchOpPlayer(){
+    setPosition();
+    setCountry();
+    var values = {
+        'key': "searchOpPlayer",
+        'position' : position,
+        'country' : country
+    }
+    phpURL = "playerPHPFn.php";
+    sendRequest(values);
+}
+
 
 function searchOpTour() {
     setStateOfTier();
@@ -86,6 +117,7 @@ function searchPlayerName(){
     }
     phpURL = "playerPHPFn.php";
     sendRequest(values);
+    resetPlayerForm();
 }
 
 

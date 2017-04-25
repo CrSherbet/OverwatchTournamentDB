@@ -17,16 +17,19 @@
  
     function searchTourName($name) {
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT TourName,Price,Tier FROM tournament WHERE tournament.TourName LIKE '%$name%'";
+        $sql = "SELECT TourName,Price,Tier,StartDate,EndDate FROM tournament WHERE tournament.TourName LIKE '%$name%'";
         $result = $conn->query($sql);
         echo $sql ;
         if ($result!=null){
-            echo "<tr>  <th>Tournament Name</th> <th>Price</th> <th>Tier</th> </tr>";
+            echo "<thead><tr> <th>Tournament Name</th> <th>Price</th> <th>Tier</th> <th>Start Date</th> <th>End Date</th></thead>";
+            echo "<tbody>";
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>". $row['TourName']."</td>";
-                echo "<td>". $row['Price']."</td>";
+                echo "<td> $". $row['Price']."</td>";
                 echo "<td>". $row['Tier']."</td>";
+                echo "<td>". $row['StartDate']."</td>";
+                echo "<td>". $row['EndDate']."</td>";
                 echo "</tr>";
             }
          }
@@ -70,13 +73,15 @@
          
         $result = $conn->query($sql);
         if ($result!=null){
-            echo "<thead><tr>  <th>Tournament Name</th> <th>Price</th> <th>Tier</th> </tr></thead>";
+            echo "<thead><tr> <th>Tournament Name</th> <th>Price</th> <th>Tier</th> <th>Start Date</th> <th>End Date</th></thead>";
             echo "<tbody>";
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>". $row['TourName']."</td>";
-                echo "<td>". $row['Price']."</td>";
+                echo "<td> $". $row['Price']."</td>";
                 echo "<td>". $row['Tier']."</td>";
+                echo "<td>". $row['StartDate']."</td>";
+                echo "<td>". $row['EndDate']."</td>";
                 echo "</tr>";
            }
            echo "</tbody>";
