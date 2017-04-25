@@ -1,12 +1,8 @@
-import bootstrap.css
-
-table,
+import bootstrap.css table,
 th,
 td {
-  border: 1px solid black;
   color: white;
 }
-
 
 div#table-tournament {
   background-color: #696969;
@@ -62,8 +58,7 @@ body#hero {
 }
 
 body#tour {
-  background-image: url("../images/Tourhd.png");
-  background-size: cover;
+  background-color: #212121;
   min-height: 100%;
 }
 
