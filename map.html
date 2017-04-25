@@ -50,13 +50,19 @@
 </head>
 
 <body id="map">
-    <h1>Map</h1>
-     <button id="btn-map-all" Onclick="showMap('All')">ALL</button>
-    <button id="btn-map-assault" Onclick="showMap('Assault')">ASSAULT</button>
-    <button id="btn-map-escort" Onclick="showMap('Escort')">ESCORT</button>
-    <button id="btn-map-control" Onclick="showMap('Control')">CONTROL</button>
-    <div id="content"> Hi</div>
-    <script>showMap('All')</script>
+    <div class="container">
+        <h1>Map</h1>
+        <div class="huge ui buttons">
+            <button class="ui button" Onclick="showMap('All')">All</button>
+            <button class="ui button" Onclick="showMap('Assault')">ASSAULT</button>
+            <button class="ui button" Onclick="showMap('Escort')">ESCORT</button>
+            <button class="ui button" Onclick="showMap('Control')">CONTROL</button>
+        </div>
+        <div id="content"> Hi</div>
+        <script>
+            showMap('All')
+        </script>
+    </div>
 
 </body>
 

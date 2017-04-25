@@ -4,6 +4,10 @@ td {
   color: white;
 }
 
+button.ui:active {
+  background: blue;
+}
+
 div#table-tournament {
   background-color: #696969;
 }
