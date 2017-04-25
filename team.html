@@ -49,22 +49,45 @@
 </head>
 
 <body id="team">
-
+    <div class="container">
         <h1>Team</h1>
-        Search Team name
-        <input type="search" id="teamNameText">
-        <button id="teamName" value="Search" Onclick="searchTeamName()">Search</button><br> Coutry
-        <br>
-        <input type="checkbox" id="country-bra">Brazil
-        <input type="checkbox" id="country-chin">China
-        <input type="checkbox" id="country-fin">Finland
-        <input type="checkbox" id="country-fra">FRA
-        <input type="checkbox" id="country-kor">Korea
-        <input type="checkbox" id="country-nld">Netherlands
-        <input type="checkbox" id="country-swe">Sweden
-        <input type="checkbox" id="country-usa">USA
-        <div id="content"> Hi</div>
-        <script></script>
+        <div class="ui inverted segment">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <label for="sel1">Search</label>
+                    <form class="form-inline" onsubmit="return false">
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="teamNameText" placeholder="Team Name" />
+                            <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchTeamName()">Search</button><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="sel1">Country</label>
+                        <select class="form-control" id="countrySelected" onchange="searchOpPlayer()">
+                        <option>All</option>
+                        <option>Brazil</option>
+                        <option>China</option>
+                        <option>Finland</option>
+                        <option>France</option>
+                        <option>South Korea</option>
+                        <option>Netherlands</option>
+                        <option>Sweden</option>
+                        <option>United States</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <table class="ui inverted table" id="content">
+            <script>
+                searchTeamName()
+            </script>
+        </table>
+    </div>
 </body>
 
 </html>

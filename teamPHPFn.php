@@ -16,7 +16,8 @@
         $result = $conn->query($sql);
         
         if ($result!=null){
-            echo "<tr>  <th>Team Name</th> <th>Manager</th> <th>Former</th> <th>Captain Team</th> </tr>";
+            echo "<thead><tr>  <th>Team Name</th> <th>Manager</th> <th>Former</th> <th>Captain Team</th> </tr></thead>";
+            echo "<tbody>";
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>". $row['TeamName']."</td>";
@@ -25,6 +26,7 @@
                 echo "<td>". $row['CaptainTeamID']."</td>";
                 echo "</tr>";
             }
+            echo "</tbody>";
          }
          echo "<br>";
      }  
