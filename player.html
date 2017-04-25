@@ -50,13 +50,13 @@
         <h1>Player</h1>
         <div class="row">
             <div class="col-md-4 col-xs-6">
-                <div class="form-group">
-                    <label for="sel1">Name</label>
-                    <form class="form-inline">
+                <label for="sel1">Name</label>
+                <form class="form-inline" onsubmit="return false">
+                    <div class="form-group">
                         <input class="form-control" type="text" id="playerNameText" placeholder="Name" />
                         <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
             <div class="col-md-4 col-xs-6">
                 <div class="form-group">
@@ -86,10 +86,12 @@
                 </div>
             </div>
         </div>
-        <div id="content"> Hi</div>
+
+        <div class="container-fluid" id="content"> Hi
         <script>
             searchPlayerName()
         </script>
+        </div>
     </div>
 </body>
 
