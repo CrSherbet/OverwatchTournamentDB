@@ -14,8 +14,6 @@
         $conn = $GLOBALS['conn'];
         $sql = "SELECT * FROM player LEFT JOIN team ON team.TeamID = player.TeamID WHERE player.BattleTag LIKE '%$name%'";
         $result = $conn->query($sql);
-    
-        echo $sql;
         if ($result!=null){
             echo "<tr> <th>BattleTag</th> <th>Firstname</th>  <th>Lastname</th> <th>Team</th> <th>Position</th> <th>Main Character</th> </tr>";
             while($row = $result->fetch_assoc()){
@@ -29,7 +27,7 @@
                 echo "</tr>";
             }
          }
-         echo "<br>";
+         echo "<br> hello";
      }  
     CloseCon($conn);
 ?>
