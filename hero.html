@@ -53,17 +53,20 @@
 </head>
 
 <body id="hero">
-    <h1>Hero
-        <h1>
-            <button id="btn-all" Onclick="showHero('All')">ALL</button>
-            <button id="btn-offense" Onclick="showHero('Offense')">OFFENSE</button>
-            <button id="btn-defense" Onclick="showHero('Defense')">DEFENSE</button>
-            <button id="btn-tank" Onclick="showHero('Tank')">TANK</button>
-            <button id="btn-support" Onclick="showHero('Support')">SUPPORT</button>
-            <div id="content"> Hi</div>
-            <script>
-                showHero('All')
-            </script>
+    <div class="container">
+        <h1>Hero</h1>
+        <div class="huge ui buttons">
+            <button class="ui button" Onclick="showHero('All')">All</button>
+            <button class="ui button" Onclick="showHero('Offense')">OFFENSE</button>
+            <button class="ui button" Onclick="showHero('Defense')">DEFENSE</button>
+            <button class="ui button" Onclick="showHero('Tank')">TANK</button>
+            <button class="ui button" Onclick="showHero('Support')">SUPPORT</button>
+        </div>
+        <div id="content"> Hi</div>
+        <script>
+            showHero('All')
+        </script>
+    </div>
 </body>
 
 </html>
