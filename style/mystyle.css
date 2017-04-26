@@ -57,7 +57,7 @@ body#map {
 }
 
 body#hero {
-  background-image: url("../images/Herohd.png");
+  background-color: #212121;
   max-height: 100%;
 }
 

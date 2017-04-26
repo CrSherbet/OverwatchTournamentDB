@@ -8,6 +8,7 @@ var TIER = {
     MAJOR: 2,
     MINOR: 4
 }
+
 function setStateOfTier() {
     if (document.getElementById("tierPremier").checked)
         tierState += TIER.PREMIER;
@@ -33,25 +34,25 @@ function setPrice() {
 }
 
 
-function resetTourForm(){
+function resetTourForm() {
     document.getElementById("tierPremier").checked = false;
     document.getElementById("tierMajor").checked = false;
     document.getElementById("tierMinor").checked = false;
     document.getElementById("price").selectedIndex = 0;
 }
 
-function resetPlayerForm(){
+function resetPlayerForm() {
     document.getElementById("posSelected").selectedIndex = 0;
     document.getElementById("countrySelected").selectedIndex = 0;
 }
 
-function searchOpPlayer(){
+function searchOpPlayer() {
     setPosition();
     setCountry();
     var values = {
         'key': "searchOpPlayer",
-        'position' : position,
-        'country' : country
+        'position': position,
+        'country': country
     }
     phpURL = "playerPHPFn.php";
     sendRequest(values);
@@ -83,7 +84,7 @@ function searchTourName() {
     resetTourForm();
 }
 
-function showMap(type){
+function showMap(type) {
     var values = {
         'key': type
     }
@@ -91,7 +92,7 @@ function showMap(type){
     sendRequest(values);
 }
 
-function showHero(role){
+function showHero(role) {
     var values = {
         'key': role
     }
@@ -99,7 +100,7 @@ function showHero(role){
     sendRequest(values);
 }
 
-function searchTeamName(){
+function searchTeamName() {
     var val = document.getElementById("teamNameText").value;
     var values = {
         'key': "searchTeamName",
@@ -110,7 +111,7 @@ function searchTeamName(){
     resetForm();
 }
 
-function searchPlayerName(){
+function searchPlayerName() {
     var val = document.getElementById("playerNameText").value;
     var values = {
         'key': "searchPlayerName",

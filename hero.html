@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="style/mystyle.css"> //
+
     <script type="text/javascript" src="javascript/JSFunction.js"></script>
+    <script type="text/javascript" src="javascript/hero.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="style/semantic.min.css">
@@ -62,9 +64,24 @@
             <button class="ui button" Onclick="showHero('Tank')">TANK</button>
             <button class="ui button" Onclick="showHero('Support')">SUPPORT</button>
         </div>
+
+        <div class="ui link cards">
+            <div class="ui card">
+                <div class="image">
+                    <img src="./images/mcree.jpg">
+                </div>
+                <div class="content">
+                    <div class="header">Mcree</div>
+                    <div class="meta">
+                        <a>Offense</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="content"> Hi</div>
         <script>
-            showHero('All')
+            // showHero('All')
         </script>
     </div>
 </body>
