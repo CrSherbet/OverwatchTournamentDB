@@ -129,7 +129,7 @@ function sendRequest(values) {
         type: "post",
         data: values,
         success: function (data, status, xhr) {
-            $("#content").html(JSON.stringify(data));
+            $("#content").html(data);
             console.log(JSON.stringify(data));
         },
         error: function (request, status, error) {

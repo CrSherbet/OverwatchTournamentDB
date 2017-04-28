@@ -16,23 +16,18 @@
         else
             $sql = 'SELECT * FROM hero WHERE hero.Role = \''.$key.'\'';
         $sql .= ' ORDER BY hero.Role' ;
-        echo $sql ;
         $result = $conn->query($sql);
         if ($result!=null){
-            echo "<tr><th>Hero Name</th> <th>Damage</th> <th>Healing</th> <th>Blood</th> <th>Speed</th> <td>Rank</tr> <th>Role</th>";
-            while($row = $result->fetch_assoc()){
-                echo "<tr>";
-                echo "<td>". $row['HeroName']."</td>";
-                echo "<td>". $row['Damage']."</td>";
-                echo "<td>". $row['Heal']."</td>";
-                echo "<td>". $row['Blood']."</td>";
-                echo "<td>". $row['Speed']."</td>";
-                echo "<td>". $row['PopRank']."</td>";
-                echo "<td>". $row['Role']."</td>";
-                echo "</tr>";
+           while($row = $result->fetch_assoc()){
+                echo '<div class=\'ui card\' >';
+                echo '<div class=\'image\'> <img src=\'./images/mcree.jpg\'></div>';
+                echo '<div class=\'content\'> <div class=\'header\'>'. $row['HeroName'].'</div> <div class=\'meta\'>';
+                echo '<a>'.$row['Role'].'</a> </div></div>????';
+                echo '</div>';
+               
             }
          }
-         echo "<br>";
+        
      }  
     
     CloseCon($conn);
