@@ -20,7 +20,7 @@
         if ($result!=null){
            while($row = $result->fetch_assoc()){
                 echo '<div class=\'ui card\' >';
-                echo '<div class=\'image\'> <img src=\'./images/mcree.jpg\'></div>';
+                echo '<div class=\'image\'> <img src=\'./images/hero/'. $row['HeroName'].'.jpg\'></div>';
                 echo '<div class=\'content\'> <div class=\'header\'>'. $row['HeroName'].'</div> <div class=\'meta\'>';
                 echo '<a>'.$row['Role'].'</a> </div></div>????';
                 echo '</div>';
