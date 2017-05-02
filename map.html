@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
 
-
 <head>
-    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style/mystyle.css"> 
+
     <script type="text/javascript" src="javascript/JSFunction.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -17,6 +18,9 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script type="text/javascript" src="javascript/bootstrap.js"></script>
+
+
+
     <title>Overwatch Tournament</title>
 
     <nav class="navbar navbar-default">
@@ -38,8 +42,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="tournament.html">Tournament <span class="sr-only">(current)</span></a></li>
                     <li><a href="team.html">Team</a></li>
-                    <li><a href="hero.html">Hero</a></li>
-                    <li class="active"><a href="map.html">Map</a></li>
+                    <li class="active"><a href="hero.html">Hero</a></li>
+                    <li><a href="map.html">Map</a></li>
                     <li><a href="player.html">Player</a></li>
                 </ul>
             </div>
@@ -58,7 +62,7 @@
             <button class="ui button" Onclick="showMap('Escort')">ESCORT</button>
             <button class="ui button" Onclick="showMap('Control')">CONTROL</button>
         </div>
-        <div id="content"></div>
+        <div class="ui link cards" id="content"></div>
         <script>
             showMap('All')
         </script>

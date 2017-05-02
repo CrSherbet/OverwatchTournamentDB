@@ -18,7 +18,6 @@
         $sql .= ' ORDER BY map.Type' ;
         $result = $conn->query($sql);
         if ($result!=null){
-
             while($row = $result->fetch_assoc()){
                 echo '<div class=\'ui card\' >';
                 echo '<div class=\'image\'> <img src=\'./images/map/'. $row['MapID'].'.jpg\'></div>';

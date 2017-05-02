@@ -59,6 +59,23 @@ function searchOpPlayer() {
     document.getElementById("playerNameText").value = "";
 }
 
+function removePlayer(){
+    
+}
+
+function searchOpEdit() {
+    setPosition();
+    setCountry();
+    var values = {
+        'key': "searchOpPlayer",
+        'position': position,
+        'country': country
+    }
+    phpURL = "editPHPFn.php";
+    sendRequest(values);
+    document.getElementById("playerNameText").value = "";
+}
+
 
 function searchOpTour() {
     setStateOfTier();
@@ -108,7 +125,6 @@ function searchTeamName() {
     }
     phpURL = "teamPHPFn.php";
     sendRequest(values);
-    resetForm();
 }
 
 function searchPlayerName() {
@@ -121,6 +137,18 @@ function searchPlayerName() {
     sendRequest(values);
     resetPlayerForm();
 }
+
+function searchInEdit() {
+    var val = document.getElementById("playerNameText").value;
+    var values = {
+        'key': "searchPlayerName",
+        'name': val
+    }
+    phpURL = "editPHPFn.php";
+    sendRequest(values);
+    resetPlayerForm();
+}
+
 
 
 function sendRequest(values) {
