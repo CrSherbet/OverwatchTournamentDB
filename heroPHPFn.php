@@ -22,7 +22,7 @@
                 echo '<div class=\'ui card\' >';
                 echo '<div class=\'image\'> <img src=\'./images/hero/'. $row['HeroName'].'.jpg\'></div>';
                 echo '<div class=\'content\'> <div class=\'header\'>'. $row['HeroName'].'</div> <div class=\'meta\'>';
-                echo '<a>'.$row['Role'].'</a> </div></div>????';
+                echo '<a>'.$row['Role'].'</a> </div></div>';
                 echo '</div>';
                
             }

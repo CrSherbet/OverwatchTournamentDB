@@ -40,37 +40,38 @@ div {
   color: white;
 }
 
-body {
-  background-repeat: no-repeat;
+body#index {
+  background-image: url("../images/OWbg.png");
   background-size: cover;
   background-color: black;
 }
 
-body#index {
-  background-image: url("../images/OWbg.png");
-  background-size: cover;
-}
-
 body#map {
-  background-image: url("../images/Maphd.png");
-  background-size: cover;
+    background-color: #212121;
+    max-height: 100%;
 }
 
 body#hero {
-  background-color: #212121;
-  max-height: 100%;
+    background-color: #212121;
+    max-height: 100%;
 }
 
 body#tour {
-  background-color: #212121;
-  min-height: 100%;
+    background-color: #212121;
+    max-height: 100%;
 }
 
 body#team {
-  background-image: url("../images/Teamhd.png");
-  max-height: 100%;
+    background-color: #212121;
+    max-height: 100%;
 }
 
 body#player {
-  background-color: #212121
+    background-color: #212121;
+    max-height: 100%;
+}
+
+body#match {
+    background-color: #212121;
+    max-height: 100%;
 }
