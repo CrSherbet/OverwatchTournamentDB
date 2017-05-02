@@ -59,8 +59,13 @@ function searchOpPlayer() {
     document.getElementById("playerNameText").value = "";
 }
 
-function removePlayer(){
-    
+function removePlayer(id){
+    var values = {
+        'key': "remove",
+        'id': id,
+    }
+    phpURL = "editPHPFn.php";
+    sendRequest(values);
 }
 
 function searchOpEdit() {

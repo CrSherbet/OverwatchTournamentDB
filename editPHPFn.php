@@ -11,7 +11,18 @@
         searchPlayerName($_POST['name']);
     else if($key == "searchOpPlayer")
         searchOpPlayer($_POST['position'] , $_POST['country']);
+    else if($key == "remove")
+        removePlayer($_POST['id']);
     
+    function removePlayer($battleTag){
+         $conn = $GLOBALS['conn'];
+        $haveCon = $GLOBALS['haveCon'];
+        $sql = "DELETE FROM player WHERE player.BattleTag = '$battleTag'";
+        $result = $conn->query($sql);
+        if ($result!=null){
+            returnTable($result);
+         }
+    }
 
      function searchOpPlayer($position, $country) {
         $conn = $GLOBALS['conn'];
@@ -26,13 +37,11 @@
             $sql .= " AND CFullName = '$country' ";
         else if(!$haveCon && $country != 'All')
             $sql .= " WHERE CFullName = '$country' ";
-        
-        echo $sql;
+   
         $result = $conn->query($sql);
         if ($result!=null){
             returnTable($result);
          }
-         echo "<br>";
      }  
 
     function searchPlayerName($name) {
@@ -59,7 +68,7 @@
             echo "<td>". $row['MainCharName']."</td>";
             echo "<td>". $row['CFullName']."</td>";
             echo "<td><div> <label for='delete'><div class='wrapper'>
-             <div class='lid'></div><div class='can'><script>removePlayer()</script></div></div> </label> </div></td>";
+             <div class='lid'></div><div class='can' Onclick = removePlayer('". $row['BattleTag']."')></div></div> </label> </div></td>";
             echo "</tr>";
         }
         echo "</tbody>";
