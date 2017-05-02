@@ -11,6 +11,12 @@ button.ui:active {
 div#table-tournament {
   background-color: #696969;
 }
+.user-input{
+  padding: 20px 0px 30px 0px;
+}
+.box-table{
+  padding: 0 0 30px 0;
+}
 
 h1 {
   color: white;

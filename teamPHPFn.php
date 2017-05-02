@@ -16,7 +16,7 @@
         $result = $conn->query($sql);
         
         if ($result!=null){
-    
+
            while($row = $result->fetch_assoc()){
                 echo '<div class=\'ui card\' >';
                 echo '<div class=\'image\'> <img src=\'./images/map/Map012.jpg\'></div>';

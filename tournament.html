@@ -54,11 +54,11 @@
 
 <body id="tour">
   <div class="container">
-    <div class="container">
-      <h1>Tournament</h1>
+    <h1>Tournament</h1>
+    <div class="user-input">
       <div class="row">
         <div class="col-md-4 col-xs-6">
-          <label for="sel1">Search</label>
+          <label for="sel1"><h4>Search</h4></label>
           <form class="form-inline" onsubmit="return false">
             <div class="form-group">
               <input class="form-control" type="text" id="tourNameText" placeholder="Name" />
@@ -68,17 +68,17 @@
         </div>
 
         <div class="col-md-4 col-xs-6">
-          <label for="sel1">Tier</label><br>
+          <label for="sel1"><h4>Tier</h4></label><br>
           <label class="checkbox-inline">
-          <input type="checkbox" id="tierPremier" value="option1"> Premier </label>
+          <input type="checkbox" id="tierPremier" value="option1"> <p>Premier</p> </label>
           <label class="checkbox-inline">
-          <input type="checkbox" id="tierMajor" value="option2"> Major </label>
+          <input type="checkbox" id="tierMajor" value="option2"> <p>Major</p> </label>
           <label class="checkbox-inline">
-          <input type="checkbox" id="tierMinor" value="option3"> Minor </label>
+          <input type="checkbox" id="tierMinor" value="option3"> <p>Minor</p> </label>
         </div>
 
         <div class="col-md-4 col-xs-6">
-          <label for="sel1">Price($)</label>
+          <label for="sel1"><h4>Price($)</h4></label>
           <select class="form-control" id="price">
               <option value="-1" onchange="searchOpTour()">ALL</option>
               <option value="50000" onchange="searchOpTour()">Less than 50,001</option>
@@ -94,7 +94,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="box-table">
       <table class="ui inverted table" id="content">
         <script>
           searchOpTour()

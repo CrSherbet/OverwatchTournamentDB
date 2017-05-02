@@ -52,10 +52,10 @@
 <body id="player">
     <div class="container">
         <h1>Player</h1>
-        <div class="ui inverted segment">
+        <div class="user-input">
             <div class="row">
                 <div class="col-md-4 col-xs-6">
-                    <label for="sel1">Search</label>
+                    <label for="sel1"><h4>Search</h4></label>
                     <form class="form-inline" onsubmit="return false">
                         <div class="form-group">
                             <input class="form-control" type="text" id="playerNameText" placeholder="Name" />
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-md-4 col-xs-6">
                     <div class="form-group">
-                        <label for="sel1">Role</label>
+                        <label for="sel1"><h4>Role</h4></label>
                         <select class="form-control" id="posSelected" onchange="searchOpPlayer()">
                         <option>All</option>
                         <option>DPS</option>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-4 col-xs-6">
                     <div class="form-group">
-                        <label for="sel1">Country</label>
+                        <label for="sel1"><h4>Country</h4></label>
                         <select class="form-control" id="countrySelected" onchange="searchOpPlayer()">
                         <option>All</option>
                         <option>Brazil</option>
@@ -90,20 +90,19 @@
                     </select>
                     </div>
                 </div>
-                 <div class="col-md-4 col-xs-6">
-                            <a href="editingPlayer.html"><button class="btn btn-default" id="btn-edit" value="edit">Edit</button></a>
-                    </div>
+                <div class="col-md-4 col-xs-6">
+                    <a href="editingPlayer.html"><button class="btn btn-default" id="btn-edit" value="edit">Edit</button></a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <table class="ui inverted table" id="content">
-            <script>
-                searchPlayerName()
-            </script>
-        </table>
+        <div class="box-table">
+            <table class="ui inverted table" id="content">
+                <script>
+                    searchPlayerName()
+                </script>
+            </table>
+        </div>
     </div>
 </body>
 

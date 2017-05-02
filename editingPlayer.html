@@ -52,7 +52,7 @@
 <body id="player">
     <div class="container">
         <h1>Player</h1>
-        <div class="ui inverted segment">
+        <div class="user-input">
             <div class="row">
                 <div class="col-md-4 col-xs-6">
                     <label for="sel1">Search</label>
@@ -92,15 +92,16 @@
                 </div>
             </div>
         </div>
+
+        <div class="box-table">
+            <table class="ui inverted table" id="content">
+                <script>
+                    searchInEdit()
+                </script>
+            </table>
+        </div>
     </div>
 
-    <div class="container">
-        <table class="ui inverted table" id="content">
-            <script>
-                searchInEdit()
-            </script>
-        </table>
-    </div>
 </body>
 
 </html>
