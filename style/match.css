@@ -28,7 +28,7 @@ html {
   }
 }
 body {
-  background-color: #f1f1f1;
+  background-color: #212121;
   font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 .container {
@@ -39,6 +39,7 @@ body {
 h1,
 h2 {
   text-align: center;
+  color: white;
 }
 h1 {
   font-size: 2rem;
@@ -426,7 +427,7 @@ h2 {
 }
 .tournament-bracket__caption {
   font-size: 0.8rem;
-  color: #BDBDBD;
+  color: #C0C0C0;
   font-weight: 300;
   padding-bottom: 0.75em;
 }
