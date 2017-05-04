@@ -70,24 +70,24 @@
         <div class="col-md-4 col-xs-6">
           <label for="sel1"><h4>Tier</h4></label><br>
           <label class="checkbox-inline">
-          <input type="checkbox" id="tierPremier" value="option1"> <p>Premier</p> </label>
+          <input type="checkbox" id="tierPremier" value="option1" onchange="searchOpTour()"> <p>Premier</p> </label>
           <label class="checkbox-inline">
-          <input type="checkbox" id="tierMajor" value="option2"> <p>Major</p> </label>
+          <input type="checkbox" id="tierMajor" value="option2" onchange="searchOpTour()"> <p>Major</p> </label>
           <label class="checkbox-inline">
-          <input type="checkbox" id="tierMinor" value="option3"> <p>Minor</p> </label>
+          <input type="checkbox" id="tierMinor" value="option3" onchange="searchOpTour()"> <p>Minor</p> </label>
         </div>
 
         <div class="col-md-4 col-xs-6">
           <label for="sel1"><h4>Price($)</h4></label>
-          <select class="form-control" id="price">
-              <option value="-1" onchange="searchOpTour()">ALL</option>
-              <option value="50000" onchange="searchOpTour()">Less than 50,001</option>
-              <option value="100000" onchange="searchOpTour()">50,001~100,000</option>
-              <option value="150000" onchange="searchOpTour()">100,001~150,000</option>
-              <option value="200000" onchange="searchOpTour()">150,001~200,000</option>
-              <option value="250000" onchange="searchOpTour()">200,001~250,000</option>
-              <option value="300000" onchange="searchOpTour()">250,001~300,000</option>
-              <option value="-2" onchange="searchOpTour()">More than 300,000</option>
+          <select class="form-control" id="price" onchange="searchOpTour()">
+              <option value="-1" >ALL</option>
+              <option value="50000" >Less than 50,001</option>
+              <option value="100000" >50,001~100,000</option>
+              <option value="150000" >100,001~150,000</option>
+              <option value="200000" >150,001~200,000</option>
+              <option value="250000" >200,001~250,000</option>
+              <option value="300000" >250,001~300,000</option>
+              <option value="-2">More than 300,000</option>
             </select>
           <!--<button class="btn btn-default" id="opSearch" value="Search" Onclick="searchOpTour()"> Submit </button>-->
         </div>
