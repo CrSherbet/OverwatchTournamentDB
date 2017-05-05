@@ -32,13 +32,23 @@
         $result = $conn->query($sql);
          if ($result!=null){
               while($row = $result->fetch_assoc()){
-                echo '<div class="popup"><img src=\'./images/team/'.$row['TeamName'].'.png\'><br><br><h2>'.$row['TeamName'].'</h2>
-                <a class="close" href="#">&times;</a>
-                <div class="content">
-                    <font color="black">Manager: </font>'.$row['MFirstName'].' '.$row['MLastName'].'<br>
-                   <font color="black">Former: </font>'.$row['FormerName'].' <br>
-                    <font color="black">Captain Team: </font>'.$row['CaptainTeamID'].'<br>
-                     <font color="black">Member: </font><br>';
+                echo '<div class="popup">
+                        <div class="row">
+                        <a class="close" href="#">&times;</a>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                    <img class="img-responsive" src=\'./images/team/'.$row['TeamName'].'.png\'>
+                            </div>
+                                    <div class="col-lg-5 col-sm-5 col-md-5">
+                                        <h2>'.$row['TeamName'].'</h2>  
+                                        <div class="content">
+                                            <font color="black">Manager: </font>'.$row['MFirstName'].' '.$row['MLastName'].'
+                                            <font color="black">Former: </font>'.$row['FormerName'].' 
+                                            <font color="black">Captain Team: </font>'.$row['CaptainTeamID'].'
+                                            <font color="black">Member: </font><br>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>';
               }
         }
 
