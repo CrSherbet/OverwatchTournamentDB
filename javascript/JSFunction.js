@@ -81,6 +81,15 @@ function searchOpEdit() {
     document.getElementById("playerNameText").value = "";
 }
 
+function searchOpTeam() {
+    setCountry();
+    var values = {
+        'key': "searchOpTeam",
+        'country': country,
+    }
+    phpURL = "teamPHPFn.php";
+    sendRequest(values);
+}
 
 function searchOpTour() {
     setStateOfTier();
