@@ -125,7 +125,8 @@ function showMap(type) {
 
 function showHero(role) {
     var values = {
-        'key': role
+        'key': "showHero",
+        'role': role
     }
     phpURL = "heroPHPFn.php";
     sendRequest(values);
@@ -172,6 +173,33 @@ function sendRequest(values) {
         data: values,
         success: function (data, status, xhr) {
             $("#content").html(data);
+            console.log(JSON.stringify(data));
+        },
+        error: function (request, status, error) {
+            console.log(error);
+        }
+    });
+}
+
+function setUp(type,id){
+    if(type == "team")
+        phpURL = "teamPHPFn.php";
+    else
+        phpURL = "heroPHPFn.php";
+    var values = {
+        'key': "showPopUp",
+        'id': id
+    }
+ 
+    showPopUp(values);
+}
+function showPopUp(values) {
+    var result = $.ajax({
+        url: phpURL,
+        type: "post",
+        data: values,
+        success: function (data, status, xhr) {
+            $("#popup1").html(data);
             console.log(JSON.stringify(data));
         },
         error: function (request, status, error) {
