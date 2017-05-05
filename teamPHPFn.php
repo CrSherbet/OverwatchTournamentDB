@@ -14,12 +14,13 @@
 
     function returnCard($result){
          while($row = $result->fetch_assoc()){
-                echo '<div class=\'ui card\' >';
-                echo '<div class=\'image\'> <img src=\'./images/team/'.$row['TeamName'].'.png\'></div>';
+                echo '<div class=\'ui card\'>';
+                echo '<a class=\'image\'href=\'#popup1\'>';
+                echo '<img src=\'./images/team/'.$row['TeamName'].'.png\'>';
+                echo '</a>';
                 echo '<div class=\'content\'> <div class=\'header\'>'. $row['TeamName'].'</div> <div class=\'meta\'>';
                 echo '<a>'.$row['CFullName'].'</a>';
                 echo '</div></div></div>';
-               
         }
     }
 

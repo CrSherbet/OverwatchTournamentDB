@@ -2,8 +2,8 @@
 <html>
 
 <head>
-   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style/mystyle.css"> 
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
 
     <script type="text/javascript" src="javascript/JSFunction.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,7 +19,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script type="text/javascript" src="javascript/bootstrap.js"></script>
 
-
+    <link rel="stylesheet" type="text/css" href="style/team.css">
 
     <title>Overwatch Tournament</title>
 
@@ -87,12 +87,29 @@
         </div>
     </div>
     <div class="container">
-        <div class="ui link cards" id="content"></div>
-            <script>
-                searchTeamName()
-            </script>
+        <div class="ui link cards" id="content">
+            <!--<div class="card">
+                <a class="image" href="#popup1">
+                    <img src="images/team/AF.Blue.png" alt="">
+                </a>
+                <div class="content">
+                    <div class="header">TEST</div>
+                </div>
+            </div>-->
+        </div>
+        <script>
+            searchTeamName()
+        </script>
         </table>
-    </div>
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Test 12</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    test test 123 hello hello.
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
