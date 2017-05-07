@@ -164,6 +164,14 @@ function searchInEdit() {
     resetPlayerForm();
 }
 
+function showTourResult(idTeam){
+    var values = {
+        'key': "showResult",
+        'id': idTeam
+    }
+    phpURL = "matchPHPFn.php";
+    sendRequest(values)
+}
 
 
 function sendRequest(values) {
@@ -173,6 +181,22 @@ function sendRequest(values) {
         data: values,
         success: function (data, status, xhr) {
             $("#content").html(data);
+            console.log(JSON.stringify(data));
+        },
+        error: function (request, status, error) {
+            console.log(error);
+        }
+    });
+}
+
+function showTourInfo(id){
+    var result = $.ajax({
+        url: "matchPHPFn.php",
+        type: "post",
+        data: {'key': "showInfo",
+                'id': id},
+        success: function (data, status, xhr) {
+            $("#headPage").html(data);
             console.log(JSON.stringify(data));
         },
         error: function (request, status, error) {

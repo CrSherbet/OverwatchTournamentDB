@@ -44,9 +44,9 @@
     function showHeroRole($role) {
         $conn = $GLOBALS['conn'];
         if($role == 'All')
-            $sql = 'SELECT * FROM hero';
+            $sql = 'SELECT HeroName, Role FROM hero';
         else
-            $sql = 'SELECT * FROM hero WHERE hero.Role = \''.$role.'\'';
+            $sql = 'SELECT HeroName, Role FROM hero WHERE hero.Role = \''.$role.'\'';
         $sql .= ' ORDER BY hero.Role' ;
         $result = $conn->query($sql);
         if ($result!=null){

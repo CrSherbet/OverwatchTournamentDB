@@ -28,7 +28,8 @@
 
     function showPopUp($id){
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT * FROM team LEFT JOIN manager ON team.ManagerID = manager.ManagerID WHERE team.TeamID = '$id'";
+        $sql = "SELECT * FROM team LEFT JOIN manager ON team.ManagerID = manager.ManagerID 
+        LEFT JOIN country ON team.Country = country.CountryAbbr WHERE team.TeamID = '$id'";
         $result = $conn->query($sql);
          if ($result!=null){
               while($row = $result->fetch_assoc()){
@@ -41,6 +42,7 @@
                                     <div class="col-lg-5 col-sm-5 col-md-5">
                                         <h2>'.$row['TeamName'].'</h2>  
                                         <div class="content">
+                                            <font color="black">Country: </font>'.$row['CFullName'].' <br>
                                             <font color="black">Manager: </font>'.$row['MFirstName'].' '.$row['MLastName'].'<br>
                                             <font color="black">Former: </font>'.$row['FormerName'].' <br>
                                             <font color="black">Captain Team: </font>'.$row['CaptainTeamID'].' <br>
@@ -62,7 +64,7 @@
 
     function searchOpTeam($country){
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT * FROM team LEFT JOIN country ON country.countryAbbr = team.Country WHERE CFullName = '$country'";
+        $sql = "SELECT TeamID,TeamName, CFullName FROM team LEFT JOIN country ON country.countryAbbr = team.Country WHERE CFullName = '$country'";
         $result = $conn->query($sql);
         
         if ($result!=null){
@@ -73,7 +75,7 @@
    
     function searchTeamName($name) {
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT * FROM team LEFT JOIN country ON country.countryAbbr = team.Country WHERE team.TeamName LIKE '%$name%'";
+        $sql = "SELECT TeamID,TeamName, CFullName FROM team LEFT JOIN country ON country.countryAbbr = team.Country WHERE team.TeamName LIKE '%$name%'";
         $result = $conn->query($sql);
         
         if ($result!=null){
