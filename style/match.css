@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
 .tournament-headers .h3 {
@@ -21,6 +21,7 @@
   flex-direction: row; 
   list-style-type: none;
   margin-bottom: 50px;
+   border-bottom: 1px solid #ccc;
 }
 
 .bracket {
@@ -123,5 +124,5 @@
   display: inline-block;
   background-color: #dbdbdb;
   color: black;
-  padding: 0 .6rem;
+  padding: 0.6rem;
 }

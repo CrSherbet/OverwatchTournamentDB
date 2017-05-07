@@ -89,6 +89,7 @@ function searchOpTeam() {
     }
     phpURL = "teamPHPFn.php";
     sendRequest(values);
+    document.getElementById("teamNameText").value = "";
 }
 
 function searchOpTour() {
@@ -102,6 +103,8 @@ function searchOpTour() {
     phpURL = "tourPHPFn.php";
     sendRequest(values);
     tierState = 0;
+    document.getElementById("tourNameText").value = "";
+
 }
 
 function searchTourName() {
