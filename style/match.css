@@ -1,98 +1,97 @@
 .competInfo {
-    height: 340px;
     width: 340px;
     float: left;
-    margin-top: 5px;
-    text-align:center;
+    text-align: center;
 }
+
 .tournament-headers {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 1px solid #ccc;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid #ccc;
 }
 
 .tournament-headers .h3 {
     width: 50%;
-    text-align:center;
+    text-align: center;
     font-weight: 400;
     border-right: 1px dashed #ccc;
     margin: 0;
-    padding:1rem;
-  }
-
+    padding: 1rem;
+}
 
 .tournament-brackets {
-  display: flex;
-  flex-direction: row; 
-  list-style-type: none;
-  margin-bottom: 50px;
-   border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ccc;
 }
 
 .bracket {
-  padding-left: 0;
-  display: flex;
-  margin: 0;
-  padding: 30px 0;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: space-around;
-  list-style-type: none;
-  border-right: 1px dashed #ccc;
-  flex: 1;
+    padding-left: 0;
+    display: flex;
+    margin: 0;
+    padding: 30px 0;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style-type: none;
+    border-right: 1px dashed #ccc;
+    border-left: 1px dashed #ccc;
+    flex: 1;
 }
 
 .team-item {
-  padding: .5rem;
-  display: block;
-  margin: .5rem 10px;
-  position: relative;
-  vertical-align: middle;
-  line-height: 3;
-  text-align: center;
-  font-size: 1.9rem;
-  border-style: solid;
-  border-color: #ccc;
-}
-.team-item :hover {
-   background-color: #990000;
+    padding: .5rem;
+    display: block;
+    margin: .5rem 10px;
+    position: relative;
+    vertical-align: middle;
+    line-height: 3;
+    text-align: center;
+    font-size: 1.9rem;
+    border-style: solid;
+    border-color: #ccc;
 }
 
+.team-item :hover {
+    background-color: #990000;
+}
 
 .team-item:after {
-  content:'';
-  border-color: #ccc;
-  border-width: 2px;
-  position: absolute;
-  display: block;
-  width: 10px;
-  right: -14px;
+    content: '';
+    border-color: #ccc;
+    border-width: 2px;
+    position: absolute;
+    display: block;
+    width: 10px;
+    right: -14px;
 }
 
 .team-item:nth-of-type(odd):after {
-  border-right-style: solid;
-  border-top-style: solid;
-  height: 50%;
-  top: 0%;
+    border-right-style: solid;
+    border-top-style: solid;
+    height: 50%;
+    top: 0%;
 }
 
 .team-item:nth-of-type(even):after {
-  border-right-style: solid;
-  border-bottom-style: solid;
-  height: 50%;
-  top: 0%;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    height: 50%;
+    top: 0%;
 }
 
 .team-item:before {
-  content:'';
-  border-top: 2px solid #ccc;
-  position: absolute;
-  height: 2px;
-  width: 10px;
-  left: -13px;
-  top: 50%;
+    content: '';
+    border-top: 2px solid #ccc;
+    position: absolute;
+    height: 2px;
+    width: 10px;
+    left: -13px;
+    top: 50%;
 }
 
 .bracket-3 .team-item:nth-of-type(odd):after {
@@ -109,33 +108,33 @@
     height: 700%;
     top: 50%;
 }
-.bracket-4  .team-item:nth-of-type(even):after {
+
+.bracket-4 .team-item:nth-of-type(even):after {
     height: 700%;
     top: -650%;
 }
-
 
 .bracket:first-of-type .team-item:before {
     display: none;
 }
 
-.bracket-4  .team-item:after {
+.bracket-4 .team-item:after {
     display: none;
-
 }
 
 .bracket:last-of-type .team-item:before {
     display: none;
 }
+
 .bracket:last-of-type .team-item:after {
     display: none;
 }
 
 .team-item time {
-  display: inline-block;
-  background-color: #dbdbdb;
-  color: black;
-  padding: 0.6rem;
+    display: inline-block;
+    background-color: #dbdbdb;
+    color: black;
+    padding: 0.6rem;
 }
 
 .overlay {
@@ -156,11 +155,11 @@
 }
 
 .popup {
-    margin: 120px auto;
+    margin: 10px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 75%;
+    width: 55%;
     position: relative;
     transition: all 5s ease-in-out;
     overflow: auto;
@@ -174,8 +173,8 @@
 
 .popup .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 5px;
+    right: 12px;
     transition: all 200ms;
     font-size: 30px;
     font-weight: bold;
@@ -183,10 +182,8 @@
     color: black;
 }
 
-
 .popup .content {
     color: grey;
     max-height: 30%;
     overflow: auto;
 }
-
