@@ -1,3 +1,10 @@
+.competInfo {
+    height: 340px;
+    width: 340px;
+    float: left;
+    margin-top: 5px;
+    text-align:center;
+}
 .tournament-headers {
   flex-grow: 1;
   display: flex;
@@ -49,6 +56,10 @@
   border-style: solid;
   border-color: #ccc;
 }
+.team-item :hover {
+   background-color: #990000;
+}
+
 
 .team-item:after {
   content:'';
@@ -64,14 +75,14 @@
   border-right-style: solid;
   border-top-style: solid;
   height: 50%;
-  top: 50%;
+  top: 0%;
 }
 
 .team-item:nth-of-type(even):after {
   border-right-style: solid;
   border-bottom-style: solid;
   height: 50%;
-  top: -50%;
+  top: 0%;
 }
 
 .team-item:before {
@@ -85,13 +96,13 @@
 }
 
 .bracket-3 .team-item:nth-of-type(odd):after {
-    height: 100%;
+    height: 200%;
     top: 50%;
 }
 
 .bracket-3 .team-item:nth-of-type(even):after {
-    height: -100%;
-    top: 0%;
+    height: 200%;
+    top: -150%;
 }
 
 .bracket-4 .team-item:nth-of-type(odd):after {
@@ -126,3 +137,56 @@
   color: black;
   padding: 0.6rem;
 }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 120px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 75%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    overflow: auto;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+
+.popup .content {
+    color: grey;
+    max-height: 30%;
+    overflow: auto;
+}
+

@@ -211,8 +211,10 @@ function showTourInfo(id){
 function setUp(type,id){
     if(type == "team")
         phpURL = "teamPHPFn.php";
-    else
+    else if(type == "hero")
         phpURL = "heroPHPFn.php";
+    else
+        phpURL = "matchPHPFn.php";
     var values = {
         'key': "showPopUp",
         'id': id
@@ -220,6 +222,7 @@ function setUp(type,id){
  
     showPopUp(values);
 }
+
 function showPopUp(values) {
     var result = $.ajax({
         url: phpURL,

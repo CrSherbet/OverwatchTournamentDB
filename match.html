@@ -57,6 +57,7 @@
       showTourInfo(idTour);
       </script>
     </div>
+    
     <div class="tournament-container">
   <div class="tournament-headers">
    
@@ -64,13 +65,24 @@
     <h3>Final</h3>
     <h3>Winner</h3>
   </div>
-
+  <div class="contain">
   <div class="tournament-brackets" id="content">
       <script> 
         var idTour = location.search.split('?')[1];
         showTourResult(idTour);
       </script>
   </div>
+  
+        <div id="popup1" class="overlay">
+            <div class="popup">
+               <h2>Test 12</h2>
+                 <a class="close" href="#">&times;</a>
+                 <div class="content">
+                     test test 123 hello hello.
+                 </div>
+             </div>
+          </div>  
+        </div>
 </div>
 </body>
 
