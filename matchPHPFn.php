@@ -16,10 +16,10 @@
 
     function showPopUp($id){
        $conn = $GLOBALS['conn'];
-        $sql = "SELECT MatchID, infoMap.MapID, Time, MapName, Location, winner.TeamName as WinnerName, loser.TeamName as LoserName 
-        FROM competition left join map as infoMap on competition.MapID  = infoMap.MapID left join team  as winner on 
-        competition.WinnerTeamID = winner.TeamID left join team as loser on competition.LoserTeamID = loser.TeamID
-        where competition.MatchID = '$id'";
+        $sql = "SELECT MatchID, infoMap.MapID, Time, MapName, Location, winner.TeamName AS WinnerName, loser.TeamName AS LoserName 
+        FROM competition LEFT JOIN map AS infoMap ON competition.MapID  = infoMap.MapID LEFT JOIN team  AS winner ON 
+        competition.WinnerTeamID = winner.TeamID LEFT JOIN team AS loser ON competition.LoserTeamID = loser.TeamID
+        WHERE competition.MatchID = '$id'";
         
         $result = $conn->query($sql);
         if ($result!=null){
@@ -38,8 +38,8 @@
 
     function showStat($id){
          $conn = $GLOBALS['conn'];
-        $sql = "SELECT AVG(Time) as avgTime , SUM(Time) as sumTime
-        FROM competition where competition.MatchID = '$id'";
+        $sql = "SELECT AVG(Time) AS avgTime , SUM(Time) AS sumTime
+        FROM competition WHERE competition.MatchID = '$id'";
         
         $result = $conn->query($sql);
         if ($result!=null){
@@ -69,9 +69,9 @@
 
     function showResult($id) {
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT MatchID, WinnerTeamID, LoserTeamID, winner.TeamName as WinnerName, loser.TeamName as LoserName 
-        FROM matching left join team  as winner on matching.WinnerTeamID = winner.TeamID    
-        left join team as loser on matching.LoserTeamID = loser.TeamID where matching.TourID = '$id' ";
+        $sql = "SELECT MatchID, WinnerTeamID, LoserTeamID, winner.TeamName AS WinnerName, loser.TeamName AS LoserName 
+        FROM matching LEFT JOIN team  AS winner ON matching.WinnerTeamID = winner.TeamID    
+        LEFT JOIN team AS loser ON matching.LoserTeamID = loser.TeamID WHERE matching.TourID = '$id' ";
         $result = $conn->query($sql);
         $count = 0;
         if ($result!=null){

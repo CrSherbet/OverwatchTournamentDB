@@ -50,11 +50,11 @@
               }
         }
 
-        $sql = "SELECT * FROM team RIGHT JOIN player ON team.TeamID = player.TeamID WHERE team.TeamID = '$id'";
+        $sql = "SELECT BattleTag, PFirstName, PLastName FROM team RIGHT JOIN player ON team.TeamID = player.TeamID WHERE team.TeamID = '$id'";
         $result = $conn->query($sql);
         if ($result!=null){
               while($row = $result->fetch_assoc()){
-                echo ''.$row['BattleTag'].'<br>';
+                echo ''.$row['BattleTag'].' ( '.$row['PFirstName'].' '.$row['PLastName'].' ) <br>';
                 echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
               }
               echo ' </div></div></div></div>';
