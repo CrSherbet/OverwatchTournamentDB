@@ -59,19 +59,27 @@
                     <label for="sel1"><h4>Search</h4></label>
                     <form class="form-inline" onsubmit="return false">
                         <div class="form-group">
-                            <input class="form-control" type="text" id="playerNameText" placeholder="Name" />
+                            <input class="form-control" type="text" id="playerNameText" placeholder="Battle Tag" />
                             <button class="btn btn-default" id="btn-playerName" value="Search" Onclick="searchPlayerName()">Search</button><br>
                         </div>
                     </form>
                 </div>
                 <div class="col-md-4 col-xs-6">
                     <div class="form-group">
-                        <label for="sel1"><h4>Role</h4></label>
+                        <label for="sel1"><h4>Position</h4></label>
                         <select class="form-control" id="posSelected" onchange="searchOpPlayer()">
                         <option>All</option>
                         <option>DPS</option>
                         <option>Tank</option>
                         <option>Support</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div class="form-group">
+                        <label for="sel1"><h4>Team</h4></label>
+                        <select class="form-control" id="teamSelected" onchange="searchOpPlayer()">
+                        <script>getTeamList("player")</script>
                     </select>
                     </div>
                 </div>
@@ -91,8 +99,11 @@
                     </select>
                     </div>
                 </div>
-                <div class="col-md-4 col-xs-6">
-                    <a href="editingPlayer.html"><button class="btn btn-default" id="btn-edit" value="edit">Edit</button></a>
+                 <div class="col-md-4 col-xs-6">
+                    <div class="form-group">
+                        <label for="sel1"><h4>Edit Player</h4></label><br>
+                            <a href="editingPlayer.html"><button class="btn btn-default" id="btn-edit" value="edit">Edit</button></a>
+                    </div>
                 </div>
             </div>
         </div>

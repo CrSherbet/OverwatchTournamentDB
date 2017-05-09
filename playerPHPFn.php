@@ -10,13 +10,27 @@
     if($key == "searchPlayerName")
         searchPlayerName($_POST['name']);
     else if($key == "searchOpPlayer")
-        searchOpPlayer($_POST['position'] , $_POST['country']);
+        searchOpPlayer($_POST['position'] , $_POST['country'], $_POST['team']);
+    else if($key == "getTeamList")
+        getTeamList();
+    
+    function getTeamList(){
+        $conn = $GLOBALS['conn'];
+        $sql = "SELECT TeamID, TeamName FROM team";
+        $result = $conn->query($sql);
+        if ($result!=null){
+            echo '<option value="All">All</option>';
+             while($row = $result->fetch_assoc()){
+                 echo '<option value="'.$row['TeamID'].'">'.$row['TeamName'].'</option>';
+             }
+         }
+    }
     
 
-     function searchOpPlayer($position, $country) {
+    function searchOpPlayer($position, $country, $team) {
         $conn = $GLOBALS['conn'];
         $haveCon = $GLOBALS['haveCon'];
-        $sql = "SELECT * FROM player LEFT JOIN team ON team.TeamID = player.TeamID
+        $sql = "SELECT * FROM player LEFT JOIN team AS t ON t.TeamID = player.TeamID
         LEFT JOIN country ON player.Country = country.CountryAbbr " ;
         if($position != 'All'){
             $sql .= " WHERE player.Position = '$position' ";
@@ -24,10 +38,16 @@
         }
         if($haveCon && $country != 'All')
             $sql .= " AND CFullName = '$country' ";
-        else if(!$haveCon && $country != 'All')
+        else if(!$haveCon && $country != 'All'){
             $sql .= " WHERE CFullName = '$country' ";
-        
+            $haveCon = true;
+        }
+        if($haveCon && $team != 'All')
+            $sql .= " AND t.TeamID = '$team' ";
+        else if(!$haveCon && $team != 'All')
+            $sql .= " WHERE t.TeamID = '$team' ";
         echo $sql;
+        echo $team;
         $result = $conn->query($sql);
         if ($result!=null){
             returnTable($result);

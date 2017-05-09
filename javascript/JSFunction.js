@@ -1,6 +1,7 @@
 var tierState = 0;
 var price = 0;
 var role;
+var team;
 var position;
 var phpURL;
 var TIER = {
@@ -24,6 +25,10 @@ function setStateOfTier() {
         tierState += TIER.MINOR;
 }
 
+function setTeam() {
+    var teamItem = document.getElementById("teamSelected");
+    team = teamItem.options[teamItem.selectedIndex].value;
+}
 function setPosition() {
     var posItem = document.getElementById("posSelected");
     position = posItem.options[posItem.selectedIndex].value;
@@ -50,6 +55,7 @@ function resetTourForm() {
 function resetPlayerForm() {
     document.getElementById("posSelected").selectedIndex = 0;
     document.getElementById("countrySelected").selectedIndex = 0;
+    document.getElementById("teamSelected").selectedIndex = 0;
 }
 
 function setPlayerInfo(){
@@ -89,15 +95,18 @@ function removePlayer(id){
     }
     phpURL = "editPHPFn.php";
     sendRequest(values);
+    resetPlayerForm();
 }
 
 function searchOpPlayer() {
     setPosition();
     setCountry();
+    setTeam();
     var values = {
         'key': "searchOpPlayer",
         'position': position,
-        'country': country
+        'country': country,
+        'team': team
     }
     phpURL = "playerPHPFn.php";
     sendRequest(values);
@@ -107,10 +116,12 @@ function searchOpPlayer() {
 function searchOpEdit() {
     setPosition();
     setCountry();
+    setTeam();
     var values = {
         'key': "searchOpPlayer",
         'position': position,
-        'country': country
+        'country': country,
+        'team': team
     }
     phpURL = "editPHPFn.php";
     sendRequest(values);
@@ -287,6 +298,28 @@ function getList(type){
         },
         success: function (data, status, xhr) {
             $("#"+type).html(data);
+            console.log(JSON.stringify(data));
+        },
+        error: function (request, status, error) {
+            console.log(error);
+        }
+    });
+}
+
+function getTeamList(type){
+     if(type == "player")
+        phpURL = "playerPHPFn.php";
+    else
+     phpURL = "editPHPFn.php";
+     var result = $.ajax({
+        url: phpURL,
+        type: "post",
+        data: {
+            'key' : "getTeamList",
+            'type': type
+        },
+        success: function (data, status, xhr) {
+            $("#teamSelected").html(data);
             console.log(JSON.stringify(data));
         },
         error: function (request, status, error) {
