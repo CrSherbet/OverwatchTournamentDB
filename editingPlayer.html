@@ -19,6 +19,9 @@
     <!-- Latest compiled and minified JavaScript -->
     <script type="text/javascript" src="javascript/bootstrap.js"></script>
 
+      <link rel="stylesheet" type="text/css" href="style/edit.css">
+
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -92,6 +95,7 @@
                     </div>
                 </div>
             </div>
+            <a href="#popup1"><button class="btn btn-default" id="btn-playerName" value="AddNewPlayer">Add</button></a><br>
         </div>
 
         <div class="box-table">
@@ -100,6 +104,38 @@
                     searchInEdit()
                 </script>
             </table>
+        </div>
+          <div id="popup1" class="overlay">
+            <div class="popup">
+                 <h2>Player Information</h2>
+                <a class="close" href="">&times;</a>
+              
+          BattleTag:<br><input type="battle-tag" name="battle" id="battle-id" placeholder="Battle Tag"><br><br>
+          Firstname:<br> <input type="first-name" name="first" id="firstn" placeholder="Firstname"><br><br>
+          Lastname:<br><input type="last-name" name="last" id="lastn" placeholder="Lastname"><br><br>
+         
+            Select your team
+            <select class="form-control" id="team">
+                <script>getList('team')</script>
+            </select><br>
+
+          Select your position
+          <select class="form-control" id="position">
+            <option>DPS</option>
+            <option>Tank</option>
+            <option>Support</option>
+          </select><br>
+
+          Select your main hero
+          <select class="form-control" id="hero">
+              <script>getList('hero')</script>
+          </select><br>
+          
+          Select your country
+          <select class="form-control" id="country">
+            <script>getList('country')</script>
+          </select><br>
+         <a href=""><input type="submit" data-inline="true" value="Submit" onClick="addNewPlayer()"></a>
         </div>
     </div>
 

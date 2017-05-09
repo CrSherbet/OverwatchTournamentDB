@@ -13,15 +13,43 @@
         searchOpPlayer($_POST['position'] , $_POST['country']);
     else if($key == "remove")
         removePlayer($_POST['id']);
+    else if($key == "getList")
+        getList($_POST['type']);
+    else if($key == "add")
+        addNewPlayer($_POST['battleTag'],$_POST['firstn'],$_POST['lastn'],
+         $_POST['team'],$_POST['position'], $_POST['main'],$_POST['country']);
+
+
+    function getList($type){
+        $conn = $GLOBALS['conn'];
+        if($type == "team"){
+            $sql = "SELECT TeamID, TeamName FROM team";
+        } else if ($type == "hero"){
+            $sql = "SELECT HeroName, HeroName FROM hero";
+        } else if ($type=="country"){
+             $sql = "SELECT CountryAbbr, CFullName FROM country";
+        }
+          $result = $conn->query($sql);
+
+         if ($result!=null){
+            while($row = $result->fetch_row()){
+                echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+            }
+         }
+    }
     
+    function addNewPlayer($battleTag, $firstn, $lastn, $team, $position, $main, $country){
+        $conn = $GLOBALS['conn'];
+        $sql = "INSERT INTO player VALUES ('$battleTag','$firstn','$lastn','$team','$position','$main','$country')";
+        $result = $conn->query($sql);
+        searchPlayerName('');
+    }
+
     function removePlayer($battleTag){
-         $conn = $GLOBALS['conn'];
-        $haveCon = $GLOBALS['haveCon'];
+        $conn = $GLOBALS['conn'];
         $sql = "DELETE FROM player WHERE player.BattleTag = '$battleTag'";
         $result = $conn->query($sql);
-        if ($result!=null){
-            returnTable($result);
-         }
+        searchPlayerName('');
     }
 
      function searchOpPlayer($position, $country) {

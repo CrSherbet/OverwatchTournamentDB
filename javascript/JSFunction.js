@@ -9,6 +9,12 @@ var TIER = {
     MINOR: 4
 }
 
+var teamP;
+var posP;
+var mainP;
+var countryP;
+
+
 function setStateOfTier() {
     if (document.getElementById("tierPremier").checked)
         tierState += TIER.PREMIER;
@@ -46,6 +52,45 @@ function resetPlayerForm() {
     document.getElementById("countrySelected").selectedIndex = 0;
 }
 
+function setPlayerInfo(){
+    var teamPlayer = document.getElementById("team");
+     teamP = teamPlayer.options[teamPlayer.selectedIndex].value;
+
+     var posPlayer = document.getElementById("position");
+     posP = posPlayer.options[posPlayer.selectedIndex].value;
+
+     var mainPlayer = document.getElementById("hero");
+     mainP = mainPlayer.options[mainPlayer.selectedIndex].value;
+
+     var countryPlayer = document.getElementById("country");
+     countryP = countryPlayer.options[countryPlayer.selectedIndex].value;
+}
+
+function addNewPlayer(){
+    setPlayerInfo();
+     var values = {
+        'key': "add",
+        'battleTag':  document.getElementById("battle-id").value  ,
+        'firstn':  document.getElementById("firstn").value  ,
+        'lastn':  document.getElementById("lastn").value  ,
+        'team': teamP ,
+        'position':  posP ,
+        'main': mainP ,
+        'country':  countryP
+    }
+    phpURL = "editPHPFn.php";
+    sendRequest(values);
+}
+
+function removePlayer(id){
+    var values = {
+        'key': "remove",
+        'id': id,
+    }
+    phpURL = "editPHPFn.php";
+    sendRequest(values);
+}
+
 function searchOpPlayer() {
     setPosition();
     setCountry();
@@ -57,15 +102,6 @@ function searchOpPlayer() {
     phpURL = "playerPHPFn.php";
     sendRequest(values);
     document.getElementById("playerNameText").value = "";
-}
-
-function removePlayer(id){
-    var values = {
-        'key': "remove",
-        'id': id,
-    }
-    phpURL = "editPHPFn.php";
-    sendRequest(values);
 }
 
 function searchOpEdit() {
@@ -192,6 +228,7 @@ function sendRequest(values) {
     });
 }
 
+// show head of tournament page
 function showTourInfo(id){
     var result = $.ajax({
         url: "matchPHPFn.php",
@@ -208,6 +245,7 @@ function showTourInfo(id){
     });
 }
 
+// About show pop up
 function setUp(type,id){
     if(type == "team")
         phpURL = "teamPHPFn.php";
@@ -230,6 +268,25 @@ function showPopUp(values) {
         data: values,
         success: function (data, status, xhr) {
             $("#popup1").html(data);
+            console.log(JSON.stringify(data));
+        },
+        error: function (request, status, error) {
+            console.log(error);
+        }
+    });
+}
+
+// Get list for selection
+function getList(type){
+     var result = $.ajax({
+        url: "editPHPFn.php",
+        type: "post",
+        data: {
+            'key' : "getList",
+            'type': type
+        },
+        success: function (data, status, xhr) {
+            $("#"+type).html(data);
             console.log(JSON.stringify(data));
         },
         error: function (request, status, error) {
