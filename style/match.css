@@ -159,10 +159,11 @@
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 55%;
+    width: 58%;
+    height: 87%;
     position: relative;
     transition: all 5s ease-in-out;
-    overflow: auto;
+    overflow: scroll;
 }
 
 .popup h2 {
