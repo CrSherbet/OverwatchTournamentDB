@@ -13,6 +13,32 @@
         searchOpPlayer($_POST['position'] , $_POST['country'], $_POST['team']);
     else if($key == "getTeamList")
         getTeamList();
+    else if($key == "showPopUp")
+        showStat();
+
+    function showStat(){
+        $conn = $GLOBALS['conn'];
+        $sql = "SELECT CFullname as Country , COUNT(country) as NumberOfPlayer FROM player LEFT JOIN country ON 
+                player.Country = country.CountryAbbr GROUP BY country ORDER BY NumberOfPlayer DESC LIMIT 5";
+        $result = $conn->query($sql);
+         if ($result!=null){
+            $order = 0;
+            echo '<div class="popup">
+                    <a class="close" href="">&times;</a>
+                    <h2>Top 5 Countries with the Most Players in the Tournament</h2>
+                                <h3><table > <tr><th width ="150" ><font color="black">Order</th> 
+                                <th width ="250"><font color="black">Country</th> 
+                                <th width ="350" ><font color="black">Number of Players</th></tr>';
+       
+              while($row = $result->fetch_assoc()){
+                $order++;     
+                echo ' <tr> <td width ="150" ><font color="black">'. $order.'</td>
+                        <td width ="250" ><font color="black">'. $row['Country'].'</td>
+                        <td width ="350" ><font color="black">'. $row['NumberOfPlayer'].'</td> </tr>';                   
+              }
+              echo ' </table></font></h3></div>';
+        }          
+    }
     
     function getTeamList(){
         $conn = $GLOBALS['conn'];

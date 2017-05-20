@@ -262,17 +262,19 @@ function setUp(type,id){
         phpURL = "teamPHPFn.php";
     else if(type == "hero")
         phpURL = "heroPHPFn.php";
-    else
+    else if(type == "match")
         phpURL = "matchPHPFn.php";
+    else if(type == "player")
+        phpURL = "playerPHPFn.php";
     var values = {
         'key': "showPopUp",
         'id': id
     }
- 
     showPopUp(values);
 }
 
 function showPopUp(values) {
+
     var result = $.ajax({
         url: phpURL,
         type: "post",
