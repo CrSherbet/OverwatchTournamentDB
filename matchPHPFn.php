@@ -16,9 +16,9 @@
 
     function showPopUp($id){
        $conn = $GLOBALS['conn'];
-        $sql = "SELECT MatchID, infoMap.MapID, Time, MapName, Location, winner.TeamName AS WinnerName, loser.TeamName AS LoserName 
-        FROM competition LEFT JOIN map AS infoMap ON competition.MapID  = infoMap.MapID LEFT JOIN team  AS winner ON 
-        competition.WinnerTeamID = winner.TeamID LEFT JOIN team AS loser ON competition.LoserTeamID = loser.TeamID
+        $sql = "SELECT MatchID, infoMap.MapID, Time, MapName, CFullName, winner.TeamName AS WinnerName, loser.TeamName AS LoserName 
+        FROM competition LEFT JOIN map AS infoMap ON competition.MapID  = infoMap.MapID LEFT JOIN country ON infoMap.Location = country.CountryAbbr
+        LEFT JOIN team  AS winner ON competition.WinnerTeamID = winner.TeamID LEFT JOIN team AS loser ON competition.LoserTeamID = loser.TeamID
         WHERE competition.MatchID = '$id'";
         
         $result = $conn->query($sql);
@@ -26,7 +26,7 @@
               echo '<div class="popup"> <a class="close" href="">&times;</a>';
               while($row = $result->fetch_assoc()){
                         echo '<div class="competInfo"><br><img src=\'./images/map/'.$row['MapID'].'.png\' height="180" width="320"><br><br>
-                            <font color="black" size="3" >'.$row['MapName'].' in '.$row['Location'].'</font><br>
+                            <font color="black" size="3" >'.$row['MapName'].' in '.$row['CFullName'].'</font><br>
                             <font color="black" size="2">Winner: '.$row['WinnerName'].' <br> Loser: '.$row['LoserName'].'</font><br>
                             <font color="black" size="1" >Time: '.$row['Time'].' minutes.</font>
                             </div>'; 
@@ -60,8 +60,8 @@
         $result = $conn->query($sql);
         if ($result!=null){
              while($row = $result->fetch_assoc()){
-                echo '<h2>'.$row['TourName'].'<h3>Tier: '.$row['Tier'].'<br>Organizer: '.$row['OrgName'].'<br> Location:'.$row['CFullName'].' <br>
-                Start Date:'.$row['StartDate'].'&nbsp;&nbsp;&nbsp; End Date: '.$row['EndDate'].'</h3>';
+                echo '<h2>'.$row['TourName'].'<h3>Tier: '.$row['Tier'].'<br>Organizer: '.$row['OrgName'].'<br> Location: '.$row['CFullName'].' <br>
+                Start Date: '.$row['StartDate'].'&nbsp;&nbsp;&nbsp; End Date: '.$row['EndDate'].'</h3>';
              }
         }
     }

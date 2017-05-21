@@ -64,7 +64,10 @@
 
     function searchOpTeam($country){
         $conn = $GLOBALS['conn'];
-        $sql = "SELECT TeamID,TeamName, CFullName FROM team LEFT JOIN country ON country.countryAbbr = team.Country WHERE CFullName = '$country'";
+        if($country == "All")
+            $sql = "SELECT TeamID,TeamName, CFullName FROM team LEFT JOIN country ON country.countryAbbr = team.Country";
+        else
+            $sql = "SELECT TeamID,TeamName, CFullName FROM team LEFT JOIN country ON country.countryAbbr = team.Country WHERE CFullName = '$country'";
         $result = $conn->query($sql);
         
         if ($result!=null){
